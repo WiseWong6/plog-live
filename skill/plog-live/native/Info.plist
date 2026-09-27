@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key><string>local.plog-live.LivePhotoTool</string>
+  <key>CFBundleName</key><string>PLOG 实况照片</string>
+  <key>CFBundleDisplayName</key><string>PLOG 实况照片</string>
+  <key>CFBundleExecutable</key><string>live-photo</string>
+  <key>CFBundlePackageType</key><string>APPL</string>
+  <key>CFBundleVersion</key><string>1</string>
+  <key>LSMinimumSystemVersion</key><string>26.0</string>
+  <key>LSUIElement</key><true/>
+  <key>NSPhotoLibraryUsageDescription</key><string>仅在你主动运行 import 时添加本次实况照片，并读取新资产以确认系统是否识别为实况照片。</string>
+  <key>NSPhotoLibraryAddUsageDescription</key><string>仅在你主动运行 import 时，将本次封面和短片作为一张实况照片添加到相册。</string>
+</dict>
+</plist>

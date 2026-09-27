@@ -1,0 +1,6 @@
+interface:
+  display_name: "PLOG·日常奇遇"
+  short_description: "让日常照片发生一个小小奇遇，制作苹果实况照片资源。"
+  default_prompt: "请使用 $plog-live，为我提供的照片制作 PLOG·日常奇遇。保留原照片的真实质感，默认使用纸云串雨，分层制作可循环动效，并明确说明实况照片资源已通过哪些验证。"
+policy:
+  allow_implicit_invocation: false

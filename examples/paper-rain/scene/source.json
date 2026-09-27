@@ -1,0 +1,27 @@
+{
+  "source": "/Users/wisewong/Documents/Developer/scenes/未完成/plog-live/examples/paper-rain/source-photo.png",
+  "originalWidth": 1086,
+  "originalHeight": 1448,
+  "orientation": 1,
+  "sha256": "65d614ce63bde85e9c1ae289efcb7796b51d7512a96ad4b5131a0d7c48541963",
+  "copiedWithoutModification": true,
+  "createdAt": "2026-09-27T05:39:27.781Z",
+  "effect": "paper-rain",
+  "configOverrides": {
+    "width": 1440,
+    "height": 1920,
+    "duration": 3,
+    "fps": 30,
+    "keyTime": 1.5,
+    "cloud": {
+      "x": 0.515,
+      "y": 0.19,
+      "width": 0.3
+    },
+    "curtain": {
+      "length": 0.28,
+      "strings": 12,
+      "sway": 0.02
+    }
+  }
+}
