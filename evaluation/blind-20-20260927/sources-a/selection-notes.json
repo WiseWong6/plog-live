@@ -1,0 +1,35 @@
+{
+  "locked_at": "2026-09-27T13:56:01.935587+08:00",
+  "selection_protocol": "先按日常摄影类别检索公开PLOG和摄影日记；下载正文原图，不裁图、不抹字、不改色。只因无法下载或输入含后加文案/拼贴等不符单张原摄影资格而排除。选样未接触项目动效结果，不根据动效适配表现择优。",
+  "counts": {
+    "total": 10,
+    "authors": 4,
+    "actual_plog": 5,
+    "photographic_diary": 5,
+    "stock_proxy": 0
+  },
+  "limitations": [
+    "仅4位作者的10张，非全互联网随机抽样。",
+    "网页提供图片版本尺寸480至1440像素不等。",
+    "书页和摊位招牌为被拍摄物的真实文字，应保留。",
+    "A03和A04来自同一篇户外咖啡PLOG，场景有关联但照片内容不同。"
+  ],
+  "excluded_candidates": [
+    {
+      "source_page": "https://tangweijuan.com/blog/2025-01-n-02",
+      "reason": "候选咖啡馆和餐点图为原作者拼贴，非单張摄影输入。"
+    },
+    {
+      "source_page": "https://www.popdaily.com.tw/forum/life/1186831",
+      "reason": "候选均带烧录文案/涂鸦或多图拼贴，未截取或抹除。"
+    },
+    {
+      "source_page": "https://www.pexels.com/",
+      "reason": "图库备用已删除，真实摄影日记已凑齐；不计入样本。"
+    },
+    {
+      "source_page": "https://lettersfromthe.city/",
+      "reason": "候选来源SSL校验失败，未关闭验证绕过，未用作样本。"
+    }
+  ]
+}

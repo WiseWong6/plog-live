@@ -1,0 +1,204 @@
+{
+  "checkedAt": "2026-09-27T06:07:53.568Z",
+  "passed": true,
+  "mode": "file:// 后台浏览器功能检查，无截图",
+  "originalIntegrity": 20,
+  "cases": [
+    {
+      "id": "B01",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B02",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B03",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B04",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B05",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B06",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B07",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B08",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B09",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B10",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B11",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B12",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B13",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B14",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B15",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B16",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B17",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B18",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B19",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    },
+    {
+      "id": "B20",
+      "originalLoaded": true,
+      "sceneReady": true,
+      "oneIframe": true,
+      "revealAndReset": true,
+      "fourScores": true,
+      "outputLinksExist": true
+    }
+  ],
+  "layout": [
+    {
+      "width": 1280,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 390,
+      "noHorizontalOverflow": true
+    }
+  ],
+  "navigation": true,
+  "directLink": true,
+  "limits": [
+    "渲染模式下检查文件加载、切换、揭晓及页面宽度；不等于用户浏览器或手机验收。",
+    "没有重评视觉分数，没有重新渲染作品。"
+  ]
+}

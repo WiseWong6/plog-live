@@ -1,0 +1,132 @@
+[
+  {
+    "id": "B01",
+    "scores": {
+      "subject": 1,
+      "placement": 2,
+      "material": 2,
+      "relation": 1
+    },
+    "total": 6,
+    "accepted": false,
+    "reason": "云完整落在上部窗格，深蓝与黑白照片层次清楚；最下排雨滴擦到左侧人物头部边缘，雨云与窗内用餐的联系偏弱。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B02",
+    "scores": {
+      "subject": 1,
+      "placement": 1,
+      "material": 1,
+      "relation": 1
+    },
+    "total": 4,
+    "accepted": false,
+    "reason": "云压住最上方鞋尖，雨滴穿过中间两只鞋；图形完整但挤在脚部，浅线在浅色鞋面上变弱，与湖景有下雨联想但位置生硬。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B03",
+    "scores": {
+      "subject": 1,
+      "placement": 1,
+      "material": 1,
+      "relation": 0
+    },
+    "total": 3,
+    "accepted": false,
+    "reason": "杯、书和壶仍清楚，但云横切举杯手腕，雨线沿衣袖下垂，浅线在白衣上变淡；雨的落点与阅读或咖啡器具没有明确联系。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B04",
+    "scores": {
+      "subject": 1,
+      "placement": 1,
+      "material": 2,
+      "relation": 2
+    },
+    "total": 6,
+    "accepted": false,
+    "reason": "云与水滴完整且在灰色街景上清楚，雨落向石榴的关系明确；密集水滴压到左侧果肉，云靠近瓶口，水果上方显得拥挤。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B05",
+    "scores": {
+      "subject": 1,
+      "placement": 1,
+      "material": 1,
+      "relation": 2
+    },
+    "total": 5,
+    "accepted": false,
+    "reason": "云盖住顶部部分花瓣，密集雨滴穿过数个花心，花簇上半部偏挤；浅色细线在亮花瓣上变弱，给花浇雨的关系明确。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B06",
+    "scores": {
+      "subject": 2,
+      "placement": 2,
+      "material": 1,
+      "relation": 2
+    },
+    "total": 7,
+    "accepted": true,
+    "reason": "三名行人的头部和身体都保留完整，雨云停在上方树冠空隙，尺度合适；部分细线融入亮叶背景，沿步道降雨的关系清楚。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B07",
+    "scores": {
+      "subject": 1,
+      "placement": 1,
+      "material": 1,
+      "relation": 1
+    },
+    "total": 4,
+    "accepted": false,
+    "reason": "双手与滤杯没有被遮住，但云碰到头发外沿，雨线穿过白袖；浅线局部消失，整体偏贴人物，雨与冲咖啡的动作联系较弱。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B08",
+    "scores": {
+      "subject": 1,
+      "placement": 1,
+      "material": 1,
+      "relation": 0
+    },
+    "total": 3,
+    "accepted": false,
+    "reason": "主菜仍可辨认，但云压到后方绿色小碗和盘沿，雨滴密集穿过上半盘菜；细线与盘纹、食材混杂，雨落在菜上的关系显得任意。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B09",
+    "scores": {
+      "subject": 2,
+      "placement": 2,
+      "material": 1,
+      "relation": 2
+    },
+    "total": 7,
+    "accepted": true,
+    "reason": "云与雨完整放在大块天空中，山谷主体保留，云雨与阴天天气关系明确；白色水滴和细线在亮天空里有些发虚。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  },
+  {
+    "id": "B10",
+    "scores": {
+      "subject": 0,
+      "placement": 1,
+      "material": 1,
+      "relation": 2
+    },
+    "total": 4,
+    "accepted": false,
+    "reason": "雨云位于两人上方，同行遇雨的关系清楚，但最长几串水滴落到前排人物眼睛与鼻梁处；雨串偏长，部分细线在白招牌上变淡。",
+    "limitation": "仅评封面构图，未评完整动态观感"
+  }
+]

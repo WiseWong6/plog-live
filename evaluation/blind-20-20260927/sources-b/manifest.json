@@ -1,0 +1,207 @@
+[
+  {
+    "id": "b01",
+    "source_page": "https://onimaga.jp/photo-diary-2025-0907-0913.html",
+    "image_url": "https://onimaga.jp/wp-content/uploads/2025/09/L1001824.jpeg",
+    "author": "オニマガさん",
+    "category": "街景/夜晚",
+    "description": "散步日记中的街头同行者，后景商店与路面",
+    "source_type": "真实摄影日记",
+    "license": "未发现明确的开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b01.jpeg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "aa317c32c675488e5eca0280666b95acdbc0b2d8f3f7c5bfaf68802b63644f93",
+    "bytes": 128465,
+    "dimensions": {
+      "pixelWidth": 795,
+      "pixelHeight": 1200
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b02",
+    "source_page": "https://note.com/tera_monoloku/n/n160650a62a47",
+    "image_url": "https://assets.st-note.com/img/1781365296-hg8L5i7pMT2vjqWm4HEzkPnF.jpg?width=1200",
+    "author": "tera_monoloku",
+    "category": "街景/夜晚",
+    "description": "东京下班散步日记中的砖楼仰视黑白照片",
+    "source_type": "真实摄影日记",
+    "license": "未发现明确的开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b02.jpg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "443d79b494b8f790ae54f7cfe635cff3982b57f30c674ef8191c5d4a4fb0b617",
+    "bytes": 172525,
+    "dimensions": {
+      "pixelWidth": 1200,
+      "pixelHeight": 800
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b03",
+    "source_page": "https://awazo.com/article/two_girls_in_a_cafe.html",
+    "image_url": "https://awazo.com/photo/2016/9866DP2M5559PP2-700w.webp",
+    "author": "Tetsu Ozawa / awazo.com",
+    "category": "室内/窗景",
+    "description": "透过咖啡馆玻璃看到窗边的两位顾客",
+    "source_type": "真实摄影日记",
+    "license": "页面标示© awazo.com；未发现开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b03.webp",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "32d0c8420691b49bf4af2ea956ff46eeef17783431f0d999dacc51872eb171d9",
+    "bytes": 50106,
+    "dimensions": {
+      "pixelWidth": 700,
+      "pixelHeight": 467
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b04",
+    "source_page": "https://note.com/tera_monoloku/n/n160650a62a47",
+    "image_url": "https://assets.st-note.com/img/1781365296-4lJ6xmNB3XHDLPMfTQo0FuOe.jpg?width=1200",
+    "author": "tera_monoloku",
+    "category": "室内/窗景",
+    "description": "咖啡馆窗玻璃中的灯光与树木反射",
+    "source_type": "真实摄影日记",
+    "license": "未发现明确的开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b04.jpg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "4890463feb5e80b5a5c197ed2093ecf14020dc690c3955032febffdf1e1686ac",
+    "bytes": 138371,
+    "dimensions": {
+      "pixelWidth": 1200,
+      "pixelHeight": 800
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b05",
+    "source_page": "https://immarykatherine.com/quilotoa-ecuador/",
+    "image_url": "https://immarykatherine.com/wp-content/uploads/2015/09/15-897-post/RY3A4323-1024x683.jpg",
+    "author": "Mary Katherine",
+    "category": "旅行自然/水面",
+    "description": "厄瓜多尔Quilotoa旅行日记的第一张沿途照片",
+    "source_type": "真实摄影日记",
+    "license": "页面标示© I’m Mary Katherine LLC；未发现开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b05.jpg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "29d09db32e58409be48a0deccd7e928d0e463898bcb67495dcc8206be6d0a0f7",
+    "bytes": 215333,
+    "dimensions": {
+      "pixelWidth": 1024,
+      "pixelHeight": 683
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b06",
+    "source_page": "https://immarykatherine.com/quilotoa-ecuador/",
+    "image_url": "https://immarykatherine.com/wp-content/uploads/2015/09/15-897-post/RY3A4505-1024x683.jpg",
+    "author": "Mary Katherine",
+    "category": "旅行自然/水面",
+    "description": "旅行日记中三双鞋伸向火山湖的休息合影，湖水与山壁占后景",
+    "source_type": "真实摄影日记",
+    "license": "页面标示© I’m Mary Katherine LLC；未发现开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b06.jpg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "cb004dd31de8afff273845a290d022a52bb91730357eb7918fbfbd191e6c5e50",
+    "bytes": 335351,
+    "dimensions": {
+      "pixelWidth": 1024,
+      "pixelHeight": 683
+    },
+    "excluded_candidate": {
+      "image_url": "https://immarykatherine.com/wp-content/uploads/2015/09/15-897-post/RY3A4504a-1024x683.jpg",
+      "reason": "正文照片带有作者叠加的大段文字，违反纯照片输入约束；尚未运行任何动效，改选紧邻下一张正文照片。"
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b07",
+    "source_page": "https://felinecafe.net/2026/09/03/louie-at-home-3/",
+    "image_url": "https://felinecafe.net/wp-content/uploads/2026/08/img_0349-louie-s.jpg",
+    "author": "greg-in-washington",
+    "category": "人物生活照/宠物",
+    "description": "居家宠物日记，近距离猫脸与杂乱室内背景",
+    "source_type": "真实摄影日记",
+    "license": "页面显示Creative Commons BY-NC-ND 4.0标志；本地测试不对外发布衍生作品",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b07.jpg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "0dd4b3da2baa458a22d8b89e8ca969d433ff42ca312ed9c629d604cf59dadc05",
+    "bytes": 969885,
+    "dimensions": {
+      "pixelWidth": 1000,
+      "pixelHeight": 1333
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b08",
+    "source_page": "https://onimaga.jp/photo-diary-2025-0907-0913.html",
+    "image_url": "https://onimaga.jp/wp-content/uploads/2025/09/L1001867.jpeg",
+    "author": "オニマガさん",
+    "category": "人物生活照/宠物",
+    "description": "日记中同行者走在人行道上的背影",
+    "source_type": "真实摄影日记",
+    "license": "未发现明确的开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b08.jpeg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "0bb231ef9d65d470087e53128bd5a031c12fc693dacd4a8a3dcdb8082a00997e",
+    "bytes": 264454,
+    "dimensions": {
+      "pixelWidth": 795,
+      "pixelHeight": 1200
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  },
+  {
+    "id": "b09",
+    "source_page": "https://jasonfrels.com/2019/06/16/lantana-flower-close-up/",
+    "image_url": "https://jasonfrels.com/wp-content/uploads/2019/06/pink-trailing-lantana-close-up-1-1.jpg",
+    "author": "Jason Frels",
+    "category": "拥挤近景/强光高亮",
+    "description": "作者在后院日光下拍摄的第一张正文马缨丹近景",
+    "source_type": "真实摄影日记",
+    "license": "未发现明确的开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b09.jpg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "e41eb0fc8c528b85f68fb57189e3ad23dbd5c1352145e78ad37a0cecbe2f9d7e",
+    "bytes": 481014,
+    "dimensions": {
+      "pixelWidth": 1080,
+      "pixelHeight": 1080
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true,
+    "embedded_mark": "原作者小型署名水印保留；不是应用界面或截图UI"
+  },
+  {
+    "id": "b10",
+    "source_page": "https://elinorp-d.github.io/blog/2026/hoya-rebecca/",
+    "image_url": "https://elinorp-d.github.io/assets/img/plants/hoyarebecca/may23_2026_bloom.jpg",
+    "author": "Elinor Poole-Dayan",
+    "category": "拥挤近景/强光高亮",
+    "description": "室内养植日记的首张球兰开花近照",
+    "source_type": "真实摄影日记",
+    "license": "未发现明确的开放授权",
+    "local_file": "evaluation/blind-20-20260927/sources-b/b10.jpg",
+    "selection_rule": "按预先分配的类别选择搜索结果中首个可用正文照片；未查看动效输出，不按动效表现选图",
+    "sha256": "57e8cb543e8a0d481edb6064dd21b793590a8784398960e8b92449ea79131dbc",
+    "bytes": 290734,
+    "dimensions": {
+      "pixelWidth": 1200,
+      "pixelHeight": 1600
+    },
+    "source_image_verified": true,
+    "outcome_not_viewed": true
+  }
+]

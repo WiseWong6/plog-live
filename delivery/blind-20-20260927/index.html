@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>PLOG · 二十张盲测</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="gallery-data.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><h1>二十张照片盲测</h1><p>PLOG 与摄影日记。先看原图与默认动效，再揭晓来源和结果。切换照片会重新隐藏结果。</p></div><span class="counter" id="counter" aria-live="polite">0 / 20</span></header>
+    <nav id="numbers" class="numbers" aria-label="选择匿名照片"></nav>
+    <div class="toolbar"><button id="previous" type="button">上一张</button><strong id="sample-id" aria-live="polite"></strong><button id="next" type="button">下一张</button></div>
+    <section class="comparison" aria-label="原照片与动效对照">
+      <figure><figcaption>原照片</figcaption><div id="original" class="media original"></div></figure>
+      <figure><figcaption>默认动效</figcaption><div id="animation" class="media animation"></div></figure>
+    </section>
+    <div class="reveal-bar"><button id="reveal" type="button" aria-expanded="false" aria-controls="results">揭晓结果</button><span>单盲 AI 构图评审；没有逐张调参。</span></div>
+    <section id="results" class="results" hidden>
+      <article><h2 id="visual-state">视觉评审</h2><div id="scores" class="scores"></div><p id="visual-reason" class="reason"></p><p class="note">每项 0–2 分；总分至少 6 分且主体保护为 2 分，才算构图可接受。封面构图评审不代表完整动态观感验收。</p></article>
+      <article><h2>技术记录</h2><dl id="checks"></dl><p id="error" class="error" hidden></p></article>
+      <article><h2>来源</h2><dl id="source"></dl><div id="source-links" class="links"></div><p id="checksum" class="checksum"></p></article>
+      <article><h2>输出文件</h2><div id="files" class="links"></div><p id="file-note" class="note"></p></article>
+    </section>
+    <footer>页面只加载当前一张动效。来源、评分和界面文字不会进入视频。</footer>
+  </main>
+</body>
+</html>
