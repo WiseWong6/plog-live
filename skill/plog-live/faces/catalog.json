@@ -1,0 +1,57 @@
+[
+  {
+    "id": "food-faces",
+    "svg": "<g fill=\"none\" stroke=\"#fff\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"-30\" cy=\"-14\" r=\"5\" fill=\"#fff\" stroke=\"none\"/><circle cx=\"23\" cy=\"-14\" r=\"5\" fill=\"#fff\" stroke=\"none\"/><path d=\"M-25 10 Q-4 34 20 9\"/></g>",
+    "viewBox": [
+      -64,
+      -48,
+      128,
+      96
+    ],
+    "static": true
+  },
+  {
+    "id": "food-face-cheesecake",
+    "svg": "<g fill=\"none\" stroke=\"#fff\" stroke-width=\"4\" stroke-linecap=\"round\"><circle cx=\"-28\" cy=\"-18\" r=\"5\" fill=\"#fff\" stroke=\"none\"/><circle cx=\"25\" cy=\"-18\" r=\"5\" fill=\"#fff\" stroke=\"none\"/><ellipse cx=\"-2\" cy=\"23\" rx=\"8\" ry=\"12\"/></g>",
+    "viewBox": [
+      -64,
+      -48,
+      128,
+      96
+    ],
+    "static": true
+  },
+  {
+    "id": "food-face-hojicha",
+    "svg": "<g fill=\"none\" stroke=\"#f4dfc2\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\".94\"><path d=\"M-47 -13 Q-31 0 -16 -13 M15 -13 Q31 0 46 -13 M-16 20 Q0 29 17 19\"/></g>",
+    "viewBox": [
+      -64,
+      -48,
+      128,
+      96
+    ],
+    "static": true
+  },
+  {
+    "id": "food-face-danish",
+    "svg": "<g fill=\"none\" stroke=\"#fff0d4\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\".94\"><circle cx=\"-32\" cy=\"-13\" r=\"5\" fill=\"#fff0d4\" stroke=\"none\"/><path d=\"M13 -13 Q30 -2 45 -13 M-23 17 Q2 35 24 15\"/></g>",
+    "viewBox": [
+      -64,
+      -48,
+      128,
+      96
+    ],
+    "static": true
+  },
+  {
+    "id": "food-face-fruit-tea",
+    "svg": "<g fill=\"none\" stroke=\"#fff0d8\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\".92\"><circle cx=\"-35\" cy=\"-14\" r=\"4.5\" fill=\"#fff0d8\" stroke=\"none\"/><circle cx=\"25\" cy=\"-14\" r=\"4.5\" fill=\"#fff0d8\" stroke=\"none\"/><path d=\"M-13 18 Q-2 24 10 17\"/><path d=\"M-55 11 l10 2 M39 13 l10 -2\" stroke-width=\"2.2\" opacity=\".72\"/></g>",
+    "viewBox": [
+      -64,
+      -48,
+      128,
+      96
+    ],
+    "static": true
+  }
+]

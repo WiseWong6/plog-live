@@ -56,6 +56,10 @@ export async function startChrome(explicit) {
       if (!closed) { child.kill('SIGTERM'); await Promise.race([new Promise(resolve => child.once('exit', resolve)), new Promise(resolve => setTimeout(resolve, 1000))]); }
     }
     rejectAll(new Error('渲染已结束。'));
+    // The writable debugging pipe can outlive Chrome and keep Node running.
+    // Close every owned pipe after the browser has exited.
+    for (const stream of child.stdio) stream?.destroy?.();
+    child.unref();
     await rm(profile, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
   })();
   try {

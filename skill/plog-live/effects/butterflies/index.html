@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>PLOG · 蝴蝶掠过</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="scene-config.js"></script>
+  <script defer src="vendor/charms-material.js"></script>
+  <script defer src="flow-runtime.js"></script><script defer src="scene.js"></script>
+  <script defer src="controls.js"></script>
+</head>
+<body>
+  <main class="stage" aria-label="蝴蝶掠过动态照片">
+    <canvas id="scene" width="1086" height="1448" role="img" aria-label="浅色小纸蝶从左上向右下掠过咖啡馆留白"></canvas>
+    <p id="scene-error" role="alert" hidden></p>
+  </main>
+  <div id="play-controls" class="playback" role="group" aria-label="动画播放控制">
+    <button id="play-toggle" type="button" aria-label="播放动画" disabled>播放</button>
+    <input id="play-progress" type="range" min="0" max="4" step="0.001" value="0" aria-label="动画进度" disabled>
+    <button id="play-replay" type="button" aria-label="从头重播" disabled>重播</button>
+    <button id="play-speed" type="button" aria-label="播放速度 1 倍，点击切换" title="切换倍速：0.5 / 1 / 1.5 / 2 / 3" disabled>1×</button>
+    <output id="play-time" for="play-progress">00:00 / 00:04</output>
+  </div>
+</body>
+</html>

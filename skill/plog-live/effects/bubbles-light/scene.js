@@ -1,0 +1,92 @@
+(function () {
+'use strict';
+const EFFECT='bubbles-light';
+function validateEffect(){
+ const light=config.variant==='light';
+ if(!['clear','light'].includes(config.variant)||!Array.isArray(config.bubbles)||config.bubbles.length!==(light?6:3))throw new Error('透明泡需要三个，轻泡需要六个。');
+ for(const p of config.bubbles){if(![p.phase,p.radius,p.drift,p.opacity,...p.from,...p.to].every(Number.isFinite)||p.phase<0||p.phase>=config.duration||p.radius<(light?.009:.025)||p.radius>(light?.028:.055)||p.opacity<=0||p.opacity>1||p.from[1]<=p.to[1]||'star' in p)throw new Error('纯气泡轨迹配置无效。');}
+}
+function effectState(time){return {time,bubbles:config.bubbles.map(p=>{
+ const u=wrap(time+p.phase)/config.duration, rise=clamp(u/.94,0,1), pop=clamp((u-.94)/.06,0,1);
+ const r=p.radius*(config.cupOrigin?(.30+.70*window.PlogFlow.birth(u)):(.86+.14*Math.sin(rise*Math.PI/2)));
+ return {...p,u,x:p.from[0]+(p.to[0]-p.from[0])*rise+Math.sin(rise*Math.PI)*p.drift,y:p.from[1]+(p.to[1]-p.from[1])*rise,radius:r,pop,opacity:p.opacity*(1-pop)*(1-pop)*(config.cupOrigin?window.PlogFlow.birth(u):1),squash:1+.012*Math.sin(rise*Math.PI*2+p.phase),envelope:r*(pop?1.18:1.07)+.001};
+})};}
+function particles(state){return state.bubbles;}
+function paintFoilStar(r,p){
+ // 星片固定在泡膜中心，轮廓始终是等长五角；只有片内反光随上升轻移。
+ const outer=r*.55,inner=outer*.43,tilt=.08*Math.sin(p.u*Math.PI*2+p.phase);
+ ctx.save();ctx.rotate(tilt);ctx.beginPath();
+ for(let i=0;i<10;i++){
+  const a=-Math.PI/2+i*Math.PI/5,n=i%2?inner:outer;
+  if(i===0)ctx.moveTo(Math.cos(a)*n,Math.sin(a)*n);else ctx.lineTo(Math.cos(a)*n,Math.sin(a)*n);
+ }
+ ctx.closePath();
+ const foil=ctx.createLinearGradient(-outer,-outer,outer,outer);
+ foil.addColorStop(0,'#f9fbff');foil.addColorStop(.22,'#91e8ff');foil.addColorStop(.43,'#d7b8f4');
+ foil.addColorStop(.57,'#ffe4a4');foil.addColorStop(.75,'#9ae9dc');foil.addColorStop(1,'#fcfcff');
+ ctx.shadowColor='rgba(214,241,255,.86)';ctx.shadowBlur=outer*.72;
+ ctx.fillStyle=foil;ctx.fill();ctx.shadowBlur=0;
+ ctx.strokeStyle='rgba(255,255,255,.88)';ctx.lineWidth=Math.max(.7,r*.045);ctx.stroke();
+ const glint=.48+.52*Math.pow(Math.max(0,Math.cos(p.u*Math.PI*2+p.phase)),4);
+ ctx.globalAlpha*=glint;ctx.strokeStyle='rgba(255,255,255,.92)';ctx.lineWidth=Math.max(.6,r*.037);
+ ctx.beginPath();ctx.moveTo(0,-outer*.96);ctx.lineTo(0,outer*.96);ctx.moveTo(-outer*.66,0);ctx.lineTo(outer*.66,0);ctx.stroke();
+ ctx.restore();
+}
+function paintBubble(p){
+ const r=p.radius*placement.width, scale=placement.width/1086;
+ ctx.save();ctx.translate(placement.x+p.x*placement.width,placement.y+p.y*placement.height);ctx.scale(1/Math.sqrt(p.squash),Math.sqrt(p.squash));ctx.globalAlpha=p.opacity*window.PlogFlow.alpha(p,config,placement.width/placement.height);
+ if(p.pop===0){
+  // 透明中心保留原照片；薄膜有浅虹彩和一明一暗的反射边。
+  const membrane=ctx.createRadialGradient(0,0,r*.80,0,0,r*1.025);
+  membrane.addColorStop(0,'rgba(233,245,250,0)');membrane.addColorStop(.55,'rgba(233,245,250,0)');membrane.addColorStop(.80,'rgba(176,222,242,.09)');membrane.addColorStop(.94,'rgba(229,241,250,.30)');membrane.addColorStop(1,'rgba(233,245,250,0)');
+  ctx.fillStyle=membrane;ctx.beginPath();ctx.arc(0,0,r*1.025,0,Math.PI*2);ctx.fill();
+  if(['bubble-1','bubble-3','bubble-4','bubble-6'].includes(p.id))paintFoilStar(r,p);
+  ctx.lineCap='round';
+  // 窗光主亮弧；对侧细暗弧在浅背景上也能勾出泡膜。
+  ctx.strokeStyle='rgba(255,255,249,.94)';ctx.lineWidth=2.55*scale;ctx.beginPath();ctx.arc(0,0,r*.963,-2.98,-1.37);ctx.stroke();
+  ctx.strokeStyle='rgba(40,58,71,.44)';ctx.lineWidth=1.55*scale;ctx.beginPath();ctx.arc(0,0,r*.99,-.70,.70);ctx.stroke();
+  ctx.strokeStyle='rgba(204,235,255,.67)';ctx.lineWidth=1.5*scale;ctx.beginPath();ctx.arc(0,0,r*.975,.56,1.52);ctx.stroke();
+  ctx.strokeStyle='rgba(250,213,240,.59)';ctx.lineWidth=1.2*scale;ctx.beginPath();ctx.arc(0,0,r*.946,1.86,2.67);ctx.stroke();
+  ctx.fillStyle='rgba(255,255,252,.94)';ctx.beginPath();ctx.ellipse(-r*.53,-r*.73,r*.12,r*.031,-.56,0,Math.PI*2);ctx.fill();
+ }else{
+  // 最高处仅留下三段极短薄膜，迅速破裂消散后才回到杯后。
+  ctx.lineCap='round';ctx.lineWidth=1.2*scale;ctx.strokeStyle='rgba(248,250,255,.64)';
+  for(const a of [-2.35,-.58,1.35]){ctx.beginPath();ctx.arc(0,0,r*(1+p.pop*.14),a,a+.16*(1-p.pop));ctx.stroke();}
+ }
+ ctx.restore();
+}
+function paintEffect(state){state.bubbles.slice().sort((a,b)=>a.radius-b.radius).forEach(paintBubble);}
+
+const config=window.PLOG_CONFIG||{}, canvas=document.getElementById('scene'), ctx=canvas.getContext('2d',{alpha:false});
+let photo,placement,foreground;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)), wrap=s=>((s%config.duration)+config.duration)%config.duration;
+function validate(){
+ if(!ctx)throw new Error('浏览器不支持画布。');
+ for(const k of ['width','height'])if(!Number.isInteger(config[k])||config[k]<64||config[k]>4096||config[k]%2)throw new Error('画布宽高需要有效偶数。');
+ if(!Number.isFinite(config.duration)||config.duration<2||config.duration>12||config.fps!==30||!Number.isFinite(config.keyTime)||config.keyTime<0||config.keyTime>=config.duration||Math.abs(config.duration*30-Math.round(config.duration*30))>1e-7||Math.abs(config.keyTime*30-Math.round(config.keyTime*30))>1e-7)throw new Error('时长须为2至12秒，封面对齐三十帧时间。');
+ if(config.effect!==EFFECT)throw new Error('场景类型错误。');
+ if(!config.foregroundPath&&!config.screenOnly)throw new Error('需要真实前景遮挡。');
+ if(!Array.isArray(config.safeRects)||!config.safeRects.length)throw new Error('需要文字保护区。');
+ config.safeRects.forEach(r=>{if(![r.x,r.y,r.width,r.height].every(Number.isFinite)||r.x<0||r.y<0||r.width<=0||r.height<=0||r.x+r.width>1||r.y+r.height>1)throw new Error('照片保护区越界。');});
+ validateEffect();
+}
+function protectBounds(p,r){return !config.safeRects.some(b=>p.x+r>b.x&&p.x-r<b.x+b.width&&p.y+r*placement.width/placement.height>b.y&&p.y-r*placement.width/placement.height<b.y+b.height);}
+function getState(seconds){if(!Number.isFinite(seconds))throw new TypeError('动画时间必须是有限数字。');return effectState(wrap(seconds));}
+function drawPhoto(){ctx.drawImage(photo,0,0,photo.naturalWidth,photo.naturalHeight,placement.x,placement.y,placement.width,placement.height);}
+function restoreFront(){ctx.save();ctx.translate(placement.x,placement.y);ctx.scale(placement.width,placement.height);ctx.clip(foreground);ctx.setTransform(1,0,0,1,0,0);drawPhoto();ctx.restore();}
+function renderAt(seconds){
+ if(api.status!=='ready')throw new Error('照片尚未准备好。');const state=getState(seconds);
+ ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.filter='none';ctx.fillStyle='#141515';ctx.fillRect(0,0,canvas.width,canvas.height);drawPhoto();
+ ctx.save();ctx.beginPath();ctx.rect(placement.x,placement.y,placement.width,placement.height);ctx.clip();paintEffect(state);ctx.restore();restoreFront();return canvas;
+}
+function loadImage(path){return new Promise((resolve,reject)=>{const img=new Image();img.onload=async()=>{try{if(img.decode)await img.decode();if(!img.naturalWidth||!img.naturalHeight)throw new Error('原图尺寸无效。');resolve(img);}catch(e){reject(e);}};img.onerror=()=>reject(new Error('照片读取失败。'));img.src=path;});}
+const api=window.PlogScene={canvas,width:config.width,height:config.height,duration:config.duration,fps:config.fps,keyTime:config.keyTime,status:'loading',error:null,renderAt,getState,photoRect:()=>photo&&{x:0,y:0,width:photo.naturalWidth,height:photo.naturalHeight,destination:{...placement}},ready:null};
+api.ready=Promise.resolve().then(async()=>{
+ validate();photo=await loadImage(config.photo);const s=Math.min(config.width/photo.naturalWidth,config.height/photo.naturalHeight);placement={x:(config.width-photo.naturalWidth*s)/2,y:(config.height-photo.naturalHeight*s)/2,width:photo.naturalWidth*s,height:photo.naturalHeight*s};
+ if(placement.x*2>=2||placement.y*2>=2)throw new Error('画布只能补不足两像素，不能裁切照片。');
+ foreground=new Path2D(config.foregroundPath);
+ // 完整采样路径包络，包括泡膜和破裂短弧外缘，避免移动途中触碰英文。
+ for(let i=0;i<900;i++){const state=getState(i/900*config.duration);for(const p of particles(state)){if(config.captionProtection!=='local-fade'&&!protectBounds(p,p.envelope))throw new Error('动效会触碰照片保护区。');}}
+ canvas.width=config.width;canvas.height=config.height;canvas.style.aspectRatio=config.width+' / '+config.height;api.status='ready';renderAt(config.keyTime);return api;
+}).catch(e=>{api.status='error';api.error=e.message;const n=document.getElementById('scene-error');if(n){n.textContent=e.message;n.hidden=false;}console.error('动效加载失败：',e);throw e;});api.ready.catch(()=>{});
+}());

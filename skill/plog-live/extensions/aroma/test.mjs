@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFile,access} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {createAroma} from './create.mjs';
+if(process.argv.length!==5)throw Error('用法：node extensions/aroma/test.mjs 照片路径 布局路径 新检查路径');
+const photo=resolve(process.argv[2]);
+const spec=JSON.parse(await readFile(resolve(process.argv[3]),'utf8'));
+const out=resolve(process.argv[4]);
+await assert.rejects(createAroma({photo,layout:spec,out,live:true}),/可靠跟随/);
+await assert.rejects(createAroma({photo,layout:{...spec,sourceSha256:'wrong'},out}),/校验值/);
+const bad=structuredClone(spec);bad.config.wisps[0].origin=[.01,.01];
+await assert.rejects(createAroma({photo,layout:bad,out}),/当前食物/);
+await assert.rejects(createAroma({photo,layout:{...spec,motionPlan:{}},out}),/动线/);
+await assert.rejects(access(out));
+console.log('通过：来源绑定、食物起点、动线必填、无跟随实况拒绝；失败不创建残留目录。');

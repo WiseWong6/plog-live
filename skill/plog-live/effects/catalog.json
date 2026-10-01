@@ -1,0 +1,171 @@
+[
+  {
+    "id": "snow",
+    "name": "雪花飘落",
+    "directory": "effects/snow",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "falling-moons",
+    "name": "月亮飘落",
+    "directory": "effects/falling-moons",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "falling-stars",
+    "name": "星星飘落",
+    "directory": "effects/falling-stars",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "falling-petals",
+    "name": "花瓣飘落",
+    "directory": "effects/falling-petals",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "mixed-charms",
+    "name": "星月流光",
+    "directory": "effects/mixed-charms",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css",
+      "vendor/charms-material.js": "effects/shared/charms-material.js"
+    }
+  },
+  {
+    "id": "rain",
+    "name": "纸云下雨",
+    "directory": "effects/rain",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "bubbles",
+    "name": "轻盈小泡·无星片",
+    "directory": "effects/bubbles",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "bubbles-light",
+    "name": "轻盈小泡·星片",
+    "directory": "effects/bubbles-light",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "bubbles-charms",
+    "name": "轻盈小泡·星月",
+    "directory": "effects/bubbles-charms",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css",
+      "vendor/charms-material.js": "effects/shared/charms-material.js"
+    }
+  },
+  {
+    "id": "meteor",
+    "name": "流星掠过",
+    "directory": "effects/meteor",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "birds",
+    "name": "纸鸟掠过",
+    "directory": "effects/birds",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "butterflies",
+    "name": "蝴蝶掠过",
+    "directory": "effects/butterflies",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "flow-runtime.js": "effects/shared/flow-runtime.js",
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css"
+    }
+  },
+  {
+    "id": "glitter",
+    "name": "星月碎光",
+    "directory": "effects/glitter",
+    "layoutRequired": true,
+    "livePlacement": "screen-only",
+    "source": "approved-gallery-20260928",
+    "sharedFiles": {
+      "controls.js": "effects/shared/controls.js",
+      "style.css": "effects/shared/style.css",
+      "vendor/charms-material.js": "effects/shared/charms-material.js"
+    }
+  }
+]

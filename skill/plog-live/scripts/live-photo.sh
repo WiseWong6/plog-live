@@ -27,11 +27,17 @@ if [[ ! -x "$BINARY" || "$NATIVE_DIR/LivePhotoTool.swift" -nt "$BINARY" || "$NAT
   SWIFTC="$(DEVELOPER_DIR="$NATIVE_DEV" xcrun --find swiftc)" || die '找不到可用的 Apple Swift 编译器；没有安装或修改任何工具。'
   SDK="$(DEVELOPER_DIR="$NATIVE_DEV" xcrun --show-sdk-path)" || die '找不到 macOS SDK。'
   mkdir -p "$APP/Contents/MacOS" "$NATIVE_DIR/.build/module-cache"
-  cp "$NATIVE_DIR/Info.plist" "$APP/Contents/Info.plist"
+  PLOG_BUILD="$(mktemp -d "$NATIVE_DIR/.build/compile.XXXXXX")"
+  trap 'rm -rf -- "$PLOG_BUILD"' EXIT
+  cp "$NATIVE_DIR/LivePhotoTool.swift" "$PLOG_BUILD/LivePhotoTool.swift"
   DEVELOPER_DIR="$NATIVE_DEV" "$SWIFTC" -parse-as-library -swift-version 5 -O \
     -target "$(uname -m)-apple-macosx26.0" -sdk "$SDK" \
     -module-cache-path "$NATIVE_DIR/.build/module-cache" \
-    "$NATIVE_DIR/LivePhotoTool.swift" -o "$BINARY"
+    "$PLOG_BUILD/LivePhotoTool.swift" -o "$PLOG_BUILD/program"
+  cp "$NATIVE_DIR/Info.plist" "$APP/Contents/Info.plist"
+  mv -f "$PLOG_BUILD/program" "$BINARY"
+  rm -rf -- "$PLOG_BUILD"
+  trap - EXIT
   codesign --force --sign - "$APP" >/dev/null 2>&1
 fi
 

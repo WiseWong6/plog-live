@@ -52,7 +52,7 @@ private struct Arguments {
         command = first
         var parsed: [String: String] = [:]
         let allowed: Set<String> = first == "pack"
-            ? ["--photo", "--video", "--output", "--name", "--key-time", "--result-json"]
+            ? ["--photo", "--video", "--output", "--name", "--key-time", "--preserve-key-time", "--result-json"]
             : ["--photo", "--video", "--result-json"]
         var index = 1
         while index < raw.count {
@@ -109,6 +109,17 @@ private struct FramePoint {
     let time: CMTime
     let duration: CMTime
 }
+// A captured still marker can occur inside a displayed VFR frame, not only at its start.
+private func frameContaining(_ time: Double, frames: [FramePoint], duration: Double) -> FramePoint? {
+    guard time.isFinite, time >= 0, time < duration else { return nil }
+    return frames.enumerated().first { index, frame in
+        let start = frame.time.seconds
+        let next = index + 1 < frames.count ? frames[index + 1].time.seconds : duration
+        let end = frame.duration.isNumeric && frame.duration.seconds > 0
+            ? min(next, start + frame.duration.seconds) : next
+        return time >= start - 0.002 && time < min(duration, end) + 0.002
+    }?.element
+}
 private func videoFrames(_ asset: AVAsset, track: AVAssetTrack) async throws -> [FramePoint] {
     let reader = try AVAssetReader(asset: asset)
     let trackOutput = AVAssetReaderTrackOutput(track: track, outputSettings: nil)
@@ -141,6 +152,8 @@ private struct TransferPipe {
 }
 private func writeMovie(asset: AVAsset, to target: URL, identifier: String, frame: FramePoint) async throws {
     let writer = try AVAssetWriter(outputURL: target, fileType: .mov)
+    // Exact common clock for 44.1/48 kHz audio and Apple 600 Hz capture times.
+    writer.movieTimeScale = 7_056_000
     let identity = AVMutableMetadataItem()
     identity.identifier = .quickTimeMetadataContentIdentifier
     identity.value = identifier as NSString
@@ -152,7 +165,7 @@ private func writeMovie(asset: AVAsset, to target: URL, identifier: String, fram
             let formats = try await track.load(.formatDescriptions)
             guard let format = formats.first else { throw fail("missing_format", "视频或音频轨道缺少格式说明。") }
             let input = AVAssetWriterInput(mediaType: mediaType, outputSettings: nil, sourceFormatHint: format)
-            if mediaType == .video { input.transform = try await track.load(.preferredTransform) }
+            if mediaType == .video { input.mediaTimeScale = try await track.load(.naturalTimeScale); input.transform = try await track.load(.preferredTransform) }
             guard writer.canAdd(input) else { throw fail("unsupported_codec", "此视频编码无法直接封装为 MOV。请先提供 H.264 视频。") }
             let receiver = writer.inputReceiver(for: input)
             let reader = try AVAssetReader(asset: asset)
@@ -190,6 +203,7 @@ private func writeMovie(asset: AVAsset, to target: URL, identifier: String, fram
             }
             try await group.waitForAll()
         }
+        writer.endSession(atSourceTime: try await asset.load(.duration))
         await writer.finishWriting()
         guard writer.status == .completed else { throw writer.error ?? fail("movie_write_failed", "MOV 封装失败。") }
     } catch {
@@ -287,10 +301,11 @@ private func verify(photo: URL, video: URL) async throws -> [String: Any] {
         let delta = nearest.map { abs($0.time.seconds - marker.time) } ?? .infinity
         let inRange = marker.time.isFinite && marker.time >= 0 && marker.time < duration && marker.duration.isFinite && marker.duration > 0
         if !inRange { issues.append("关键照片时间不在有效视频范围内。") }
-        if delta > 0.001 { issues.append("关键照片标记没有对齐实际视频帧。") }
-        if marker.value != 0 { issues.append("关键照片时间标记的数据值不受本工具支持。") }
+        let containing = frameContaining(marker.time, frames: frames, duration: duration)
+        if containing == nil { issues.append("关键照片标记不在实际视频帧的显示区间内。") }
+        if ![0, -1].contains(marker.value) { issues.append("关键照片时间标记的数据值不受本工具支持。") }
         markerJSON = ["seconds": marker.time, "duration_seconds": marker.duration,
-                      "matches_video_frame": delta <= 0.001, "value": marker.value]
+                      "matches_video_frame": containing != nil, "match_rule": "inside_displayed_frame_interval", "tolerance_seconds": 0.002, "value": marker.value]
         if delta.isFinite { markerJSON["frame_delta_seconds"] = delta }
     }
     let pairingPassed = issues.isEmpty
@@ -344,7 +359,13 @@ private func pack(_ args: Arguments) async throws -> [String: Any] {
     }
     let frameDuration = nearest.duration.isNumeric && nearest.duration.seconds > 0
         ? nearest.duration : CMTime(seconds: duration / Double(frames.count), preferredTimescale: 60000)
-    let frame = FramePoint(time: nearest.time, duration: frameDuration)
+    let preserve = args.values["--preserve-key-time"] ?? "false"
+    guard ["true", "false"].contains(preserve) else { throw fail("invalid_argument", "preserve-key-time 只接受 true 或 false") }
+    let markerTime = preserve == "true" ? CMTime(seconds: requested, preferredTimescale: 7_056_000) : nearest.time
+    guard frameContaining(markerTime.seconds, frames: frames, duration: duration) != nil else {
+        throw fail("invalid_key_time", "原封面时刻不在有效帧显示区间内，不能静默移动标记。")
+    }
+    let frame = FramePoint(time: markerTime, duration: frameDuration)
     let staging = directory.appendingPathComponent(".plog-live-\(UUID().uuidString)", isDirectory: true)
     try fm.createDirectory(at: staging, withIntermediateDirectories: false)
     defer { try? fm.removeItem(at: staging) }

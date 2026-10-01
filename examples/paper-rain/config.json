@@ -1,9 +1,0 @@
-{
-  "width": 1440,
-  "height": 1920,
-  "duration": 3,
-  "fps": 30,
-  "keyTime": 1.5,
-  "cloud": { "x": 0.515, "y": 0.19, "width": 0.30 },
-  "curtain": { "length": 0.28, "strings": 12, "sway": 0.020 }
-}

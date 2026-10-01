@@ -15,7 +15,7 @@ const dataBuffer = url => { if (!url?.startsWith('data:image/png;base64,')) thro
 const stop = () => { encoder?.kill('SIGTERM'); void browser?.close(); process.exitCode = 130; };
 process.once('SIGINT', stop); process.once('SIGTERM', stop);
 try {
-  const args = parseArgs(process.argv.slice(2), ['scene', 'out', 'browser']);
+  const args = parseArgs(process.argv.slice(2), ['scene', 'out', 'browser', 'overlay', 'duration', 'key-time']);
   if (args.help) { console.log(usage); process.exit(0); }
   if (!args.scene || !args.out) throw new Error(usage);
   const entry = await inputFile(join(resolve(args.scene), 'index.html'), '--scene/index.html');
@@ -26,6 +26,17 @@ try {
   await mkdir(dirname(resolve(args.out)), { recursive: true });
   await mkdir(resolve(args.out)); output = resolve(args.out);
   browser = await startChrome(args.browser);
+  if (args.overlay === 'true') await browser.command('Page.addScriptToEvaluateOnNewDocument', {source: `
+    const getContext=HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext=function(type,options){return getContext.call(this,type,this.id==='scene'&&type==='2d'?{...options,alpha:true}:options)};
+    const fill=CanvasRenderingContext2D.prototype.fillRect,draw=CanvasRenderingContext2D.prototype.drawImage;
+    CanvasRenderingContext2D.prototype.fillRect=function(x,y,w,h){if(this.canvas.id==='scene'&&x===0&&y===0&&w===this.canvas.width&&h===this.canvas.height)return this.clearRect(x,y,w,h);return fill.call(this,x,y,w,h)};
+    CanvasRenderingContext2D.prototype.drawImage=function(image,...a){
+      if(this.canvas.id==='scene'&&image instanceof HTMLImageElement&&image.src===new URL(window.PLOG_CONFIG.photo,location.href).href){
+        if(a.length===8)return this.clearRect(...a.slice(4));if(a.length===4)return this.clearRect(...a);return this.clearRect(a[0],a[1],image.naturalWidth,image.naturalHeight);
+      }return draw.call(this,image,...a);
+    };
+  `});
   const nav = await browser.command('Page.navigate', { url: pathToFileURL(entry).href });
   if (nav.errorText) throw new Error(nav.errorText);
   await browser.evaluate(`new Promise((resolve, reject) => {
@@ -37,13 +48,13 @@ try {
     }; check();
   })`);
   const config = await browser.evaluate(`({width:PlogScene.width,height:PlogScene.height,duration:PlogScene.duration,fps:PLOG_CONFIG.fps,keyTime:PLOG_CONFIG.keyTime,effect:PLOG_CONFIG.effect})`);
-  const { width, height, duration, fps, keyTime } = config;
+  const {width,height,fps}=config; const duration=args.duration?Number(args.duration):config.duration,keyTime=args['key-time']?Number(args['key-time']):config.keyTime; const overlay=args.overlay==='true';
   if (![width, height, fps].every(Number.isInteger) || width < 16 || height < 16 || width > 4096 || height > 4096 || width % 2 || height % 2 || fps < 1 || fps > 60 || !Number.isFinite(duration) || duration <= 0 || duration > 15 || !Number.isFinite(keyTime) || keyTime < 0 || keyTime >= duration) throw new Error('导出参数无效：尺寸须为16–4096的偶数、帧率1–60、时长0–15秒、封面时刻须在片长内。');
-  if (Math.abs(duration * fps - Math.round(duration * fps)) > 1e-7 || Math.abs(keyTime * fps - Math.round(keyTime * fps)) > 1e-7) throw new Error('时长和封面时刻必须对齐完整视频帧。');
-  const count = Math.round(duration * fps);
+  if (!overlay && (Math.abs(duration * fps - Math.round(duration * fps)) > 1e-7 || Math.abs(keyTime * fps - Math.round(keyTime * fps)) > 1e-7)) throw new Error('时长和封面时刻必须对齐完整视频帧。');
+  const count = Math.ceil(duration * fps);
   if (count < 2) throw new Error('实况照片动效至少需要两帧。');
   const capture = async time => dataBuffer(await browser.evaluate(`PlogScene.renderAt(${time}); PlogScene.canvas.toDataURL('image/png')`));
-  const a = await capture(0), b = await capture(duration), key = await capture(keyTime), again = await capture(0);
+  const a = await capture(0), b = await capture(config.duration), key = await capture(keyTime), again = await capture(0);
   const loopExact = hash(a) === hash(b), seekStable = hash(a) === hash(again);
   // The cover can be the first frame. Check movement independently of that choice.
   let motionPresent = false;
@@ -53,7 +64,7 @@ try {
   if (!loopExact || !seekStable || !motionPresent) throw new Error(`动作校验未通过：循环=${loopExact}，回拖一致=${seekStable}，存在运动=${motionPresent}`);
   await writeFile(join(output, 'cover.png'), key, { flag: 'wx' });
   let stderr = '';
-  encoder = spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-nostdin', '-n', '-f', 'image2pipe', '-framerate', String(fps), '-vcodec', 'png', '-i', 'pipe:0', '-an', '-vf', 'scale=out_color_matrix=bt709:out_range=tv', '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-pix_fmt', 'yuv420p', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-movflags', '+faststart', join(output, 'preview.mp4')], { stdio: ['pipe', 'ignore', 'pipe'] });
+  encoder = spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-nostdin', '-n', '-f', 'image2pipe', '-framerate', String(fps), '-vcodec', 'png', '-i', 'pipe:0', '-an', ...(overlay ? ['-c:v','prores_ks','-profile:v','4','-pix_fmt','yuva444p10le'] : ['-vf','scale=out_color_matrix=bt709:out_range=tv','-c:v','libx264','-preset','medium','-crf','16','-pix_fmt','yuv420p','-color_primaries','bt709','-color_trc','bt709','-colorspace','bt709','-movflags','+faststart']), join(output, overlay?'overlay.mov':'preview.mp4')], { stdio: ['pipe', 'ignore', 'pipe'] });
   encoder.stderr.on('data', data => { stderr = (stderr + data).slice(-4000); });
   // Attach immediately so a failed encoder never causes an unhandled EPIPE.
   let encoderError;
@@ -67,19 +78,19 @@ try {
     if (frame % fps === 0) process.stderr.write(`已渲染 ${frame}/${count} 帧\n`);
   }
   encoder.stdin.end(); await encoded;
-  const probe = spawnSync('ffprobe', ['-v', 'error', '-count_frames', '-show_entries', 'stream=codec_name,codec_type,width,height,nb_read_frames:format=duration', '-of', 'json', join(output, 'preview.mp4')], { encoding: 'utf8' });
+  const probe = spawnSync('ffprobe', ['-v', 'error', '-count_frames', '-show_entries', 'stream=codec_name,codec_type,width,height,nb_read_frames:format=duration', '-of', 'json', join(output, overlay?'overlay.mov':'preview.mp4')], { encoding: 'utf8' });
   if (probe.status !== 0) throw new Error(`导出视频无法读取：${probe.stderr}`);
   const media = JSON.parse(probe.stdout), video = media.streams.find(stream => stream.codec_type === 'video');
   if (!video || video.width !== width || video.height !== height || Number(video.nb_read_frames) !== count || Math.abs(Number(media.format.duration) - duration) > 1 / fps || media.streams.some(s => s.codec_type === 'audio')) throw new Error('编码结果的尺寸、帧数、时长或音轨不符合场景配置。');
   let source = null;
   try { source = JSON.parse(await readFile(join(dirname(entry), 'source.json'), 'utf8')); } catch {}
-  const report = { createdAt: new Date().toISOString(), scene: dirname(entry), ...config, frames: count,
+  const report = { createdAt: new Date().toISOString(), scene: dirname(entry), ...config, duration,keyTime,overlay,frames: count,
     validation: { exactLoop: loopExact, deterministicSeek: seekStable, motionPresent, encodedDimensions: true, encodedFrames: true, silent: true, browserInteractionReviewed: false, visualReview: '待用户验收', livePhotoPackaged: false },
-    source, files: { cover: 'cover.png', preview: 'preview.mp4' }, browser: browser.executable,
+    source, files: { cover: 'cover.png', preview: overlay?'overlay.mov':'preview.mp4' }, browser: browser.executable,
     note: '通过时间采样和文件检查；未进行浏览器界面操作或截图观感验收。所有帧直接送入编码器，无逐帧临时图片。' };
   await writeFile(join(output, 'render-report.json'), JSON.stringify(report, null, 2) + '\n', { flag: 'wx' });
   completed = true;
-  console.log(JSON.stringify({ output, cover: join(output, 'cover.png'), video: join(output, 'preview.mp4'), report: join(output, 'render-report.json') }, null, 2));
+  console.log(JSON.stringify({ output, cover: join(output, 'cover.png'), video: join(output, overlay?'overlay.mov':'preview.mp4'), report: join(output, 'render-report.json') }, null, 2));
 } catch (error) { reportError(error); }
 finally {
   if (encoder && encoder.exitCode === null) encoder.kill('SIGTERM');

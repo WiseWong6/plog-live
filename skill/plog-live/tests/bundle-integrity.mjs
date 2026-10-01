@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {mkdtemp,mkdir,cp,writeFile,readFile,rm,symlink} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {createHash} from 'node:crypto';
+import {spawnSync} from 'node:child_process';
+const directory=await mkdtemp(join(tmpdir(),'plog-bundle-check-'));
+const check=()=>spawnSync(process.execPath,[join(directory,'scripts/verify-bundle.mjs')],{encoding:'utf8'});
+try {
+ await mkdir(join(directory,'scripts'));
+ await cp(new URL('../scripts/verify-bundle.mjs',import.meta.url),join(directory,'scripts/verify-bundle.mjs'));
+ await writeFile(join(directory,'asset.txt'),'original');
+ const files=[];
+ for(const path of ['scripts/verify-bundle.mjs','asset.txt'])files.push({path,sha256:createHash('sha256').update(await readFile(join(directory,path))).digest('hex')});
+ await writeFile(join(directory,'bundle-manifest.json'),JSON.stringify({files}));
+ assert.equal(check().status,0);
+ await writeFile(join(directory,'asset.txt'),'changed');
+ assert.match(check().stderr,/内容变化/);
+ await rm(join(directory,'asset.txt'));
+ assert.match(check().stderr,/缺失/);
+ await writeFile(join(directory,'asset.txt'),'original');
+ await writeFile(join(directory,'unexpected.txt'),'extra');
+ assert.match(check().stderr,/清单外文件/);
+ await rm(join(directory,'unexpected.txt'));
+ await symlink('asset.txt',join(directory,'asset-link'));
+ assert.match(check().stderr,/不允许软链接/);
+ await rm(join(directory,'asset-link'));
+ await mkdir(join(directory,'native/.build'),{recursive:true});
+ await writeFile(join(directory,'native/.build/cache'),'runtime cache');
+ await writeFile(join(directory,'.DS_Store'),'system metadata');
+ assert.equal(check().status,0);
+ console.log('通过：完整包校验拒绝改动、缺失、多余文件及包内软链接；编译缓存不影响校验。');
+} finally {await rm(directory,{recursive:true,force:true});}

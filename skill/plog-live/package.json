@@ -1,0 +1,12 @@
+{
+  "name": "plog-live",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node tests/check.mjs && node tests/motion-layout.mjs && node tests/bundle-integrity.mjs && node tests/native-build.mjs",
+    "verify": "node scripts/plog.mjs verify"
+  }
+}

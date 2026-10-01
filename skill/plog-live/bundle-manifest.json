@@ -1,0 +1,600 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "60bb9bfe2e13f60ad08833c2dc09c5ecae6e21c7d014fe6af0a87bed639bca93",
+      "bytes": 2767
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "cf05b25333a4b73533c66f9e12df8e70f748cc2cd347d0ef9e66499309e19ae0",
+      "bytes": 5186
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "960fdc5691cd03e707fb5ff85f2b1e89b62f87bf269763ef8bb81752564790fb",
+      "bytes": 253
+    },
+    {
+      "path": "effects/birds/index.html",
+      "sha256": "bfffd264ca7bc46d7b3b70aaad7222d674895b79089a2a5606f4c3b0d4f9a94f",
+      "bytes": 1394
+    },
+    {
+      "path": "effects/birds/scene-config.js",
+      "sha256": "9b06aeb2d0325c67e818d5d92ad24543595ce4d7e199ff58bad74a3f95f8b6e9",
+      "bytes": 2295
+    },
+    {
+      "path": "effects/birds/scene.js",
+      "sha256": "a7c8a586578247b1bd7008da379ff4f1b979fe4329a434997e3622f055aa1ce4",
+      "bytes": 7514
+    },
+    {
+      "path": "effects/bubbles/index.html",
+      "sha256": "c39dfac46eb1d92cb8d08838263cdb5c88d908ca1036a66210eb434263d9709a",
+      "bytes": 1385
+    },
+    {
+      "path": "effects/bubbles/scene-config.js",
+      "sha256": "a4fa83d6d82ad0e8035fe7deca3755762fc0a0e0594e45e59e3695e00388b9dd",
+      "bytes": 2095
+    },
+    {
+      "path": "effects/bubbles/scene.js",
+      "sha256": "ad76347bd49a8816e6e53edaf91e67fe1abf9999f53886c1b08b1a5ece1d88ad",
+      "bytes": 7638
+    },
+    {
+      "path": "effects/bubbles-charms/index.html",
+      "sha256": "5bee4569719434d52259a44c4e81fee2921882550c0970bd6614182ed890e0f4",
+      "bytes": 1482
+    },
+    {
+      "path": "effects/bubbles-charms/scene-config.js",
+      "sha256": "d7471e7f98c9c04dc70214dd84d43df461ceba55983c4c3d702273fe352e5b56",
+      "bytes": 2586
+    },
+    {
+      "path": "effects/bubbles-charms/scene.js",
+      "sha256": "781794ebc13e01c71d8af416c0e6b70ded01ac3cf5914ab91322cdc032bbecd8",
+      "bytes": 8870
+    },
+    {
+      "path": "effects/bubbles-charms/vendor/SOURCES.md",
+      "sha256": "50c402cb60a925cf797731b0ac9330af187dc36fdd55f3b5a0ad9ec1b4765be7",
+      "bytes": 210
+    },
+    {
+      "path": "effects/bubbles-light/index.html",
+      "sha256": "3e09c3cb48900a272637a3aae2dfeefb2188fa674620ffb6b3d97469133db3c5",
+      "bytes": 1382
+    },
+    {
+      "path": "effects/bubbles-light/scene-config.js",
+      "sha256": "301491122b811836f90ac998527f194b09aeab967173de350b21c004d46288b0",
+      "bytes": 2101
+    },
+    {
+      "path": "effects/bubbles-light/scene.js",
+      "sha256": "1f47a1e4837380c0a0982c83a05a80c5dcc2cba774e95390a05ef34aad4bee10",
+      "bytes": 8969
+    },
+    {
+      "path": "effects/butterflies/index.html",
+      "sha256": "373c5c5496f1a96f3718041c181b15a92e93e298e85e50f3be9d15d594012d74",
+      "bytes": 1440
+    },
+    {
+      "path": "effects/butterflies/scene-config.js",
+      "sha256": "f2462235b82e6d4b81d28045161138bc7f65889e1fa6464cbb6da12c2a94ec77",
+      "bytes": 4418
+    },
+    {
+      "path": "effects/butterflies/scene.js",
+      "sha256": "9e26e8b86776be1afcda43b808aa2cbaf8dacb76075f2d7a05a4e8a9fcbca064",
+      "bytes": 7456
+    },
+    {
+      "path": "effects/butterflies/vendor/SOURCES.md",
+      "sha256": "aeb1331a8dd6cd5f0ffbe039dbbbf3ec61fb63513002d6ba58315a1c41929727",
+      "bytes": 390
+    },
+    {
+      "path": "effects/butterflies/vendor/charms-material.js",
+      "sha256": "547f8d48b94d49a6d95700c93062bafd2b6cad9516edf91085a67908d05787d6",
+      "bytes": 2369
+    },
+    {
+      "path": "effects/catalog.json",
+      "sha256": "e4e8a48eee0377a385dc630412e39159d3862bc51b0d5a954337980faf4ec264",
+      "bytes": 5125
+    },
+    {
+      "path": "effects/falling-moons/index.html",
+      "sha256": "31ecb18e9ee80751e6f396c4ea80ee187d4b1101c2893164b0d378b4a0cc37df",
+      "bytes": 1489
+    },
+    {
+      "path": "effects/falling-moons/scene-config.js",
+      "sha256": "f44738da3160a4af309412a26ad2b880da70b94440dd13cb6ca751b2dce2ed18",
+      "bytes": 2692
+    },
+    {
+      "path": "effects/falling-moons/scene.js",
+      "sha256": "b4dba3a7e688f696a479141b31ea7bedd33fb8a7eb70a332db6d5b0f45d936db",
+      "bytes": 7127
+    },
+    {
+      "path": "effects/falling-moons/vendor/SOURCES.md",
+      "sha256": "ee8c89b8fc588c6ed35c7244544b51c648193338e309e92c67120a9035d517c1",
+      "bytes": 1637
+    },
+    {
+      "path": "effects/falling-moons/vendor/moon-material.js",
+      "sha256": "c601a9089b874a97c2706a53cafcc88a775013c79d29ba9bac0b84e6dcd1ba20",
+      "bytes": 5071
+    },
+    {
+      "path": "effects/falling-petals/index.html",
+      "sha256": "17d122bcc57c3c67d816a6f2a35fc9c55131811b837a06ea987fe5bce04bf322",
+      "bytes": 1376
+    },
+    {
+      "path": "effects/falling-petals/scene-config.js",
+      "sha256": "2c31246f3107131a068844d9df02ef35c56971dea544f36a8fd297066c6cfca8",
+      "bytes": 2711
+    },
+    {
+      "path": "effects/falling-petals/scene.js",
+      "sha256": "fb7f6dcef40b00f6655116cb202128b3e6ae07139b3df2b28c57623239f3aacf",
+      "bytes": 9362
+    },
+    {
+      "path": "effects/falling-stars/index.html",
+      "sha256": "6543897cb3dcd80cce8739b25e9a82299707897507dccaedbbc656f0a78cda38",
+      "bytes": 1376
+    },
+    {
+      "path": "effects/falling-stars/scene-config.js",
+      "sha256": "4320940f6ee0238f447ea47fbe13283f418aa59227e52a66537c23129faecfea",
+      "bytes": 3361
+    },
+    {
+      "path": "effects/falling-stars/scene.js",
+      "sha256": "97717d72fe9ca201dd6f828a0906b3ec8eeaa47e050b6f293837233b773ed2b6",
+      "bytes": 9339
+    },
+    {
+      "path": "effects/glitter/index.html",
+      "sha256": "e4cc8beddd4eed722861dccd684b28e132c0d2efe503a72f9e9c5c2c0bfef593",
+      "bytes": 1437
+    },
+    {
+      "path": "effects/glitter/scene-config.js",
+      "sha256": "e94db3d0952f975a42e5d74baaac43b9e2fc64c56a2b5aafc9c7bb4201eb0d6b",
+      "bytes": 2795
+    },
+    {
+      "path": "effects/glitter/scene.js",
+      "sha256": "f4e1d67d4b53350200b41e3767fe3795bd2bd6c947a5d15ab9314680ea98860f",
+      "bytes": 7862
+    },
+    {
+      "path": "effects/glitter/vendor/SOURCES.md",
+      "sha256": "04cbd09816ddf52a00e7759f6c1a0d4f32f306d54f709cb8a4754deb432716c7",
+      "bytes": 327
+    },
+    {
+      "path": "effects/meteor/index.html",
+      "sha256": "c88673a91aa6ce5ecf26785c5f206d70025cbbfbf446930012efa16b29a0f7e8",
+      "bytes": 1367
+    },
+    {
+      "path": "effects/meteor/scene-config.js",
+      "sha256": "9fdefe84d21b82693539acf63c720874c68bebf634620700c7130ed7aacf8d36",
+      "bytes": 1976
+    },
+    {
+      "path": "effects/meteor/scene.js",
+      "sha256": "df9761e8dd8eec8ba4750d0a969d79e8358a0478a26058e3fe564bcecd653dac",
+      "bytes": 15782
+    },
+    {
+      "path": "effects/mixed-charms/index.html",
+      "sha256": "56b594640a9b7e9faf02e8ba617a48829c87df28a65847d73c9c17dafde0ef0b",
+      "bytes": 1449
+    },
+    {
+      "path": "effects/mixed-charms/scene-config.js",
+      "sha256": "9651e6c0977c7f419aeef6cc61482d4f5be8e6bab0a1f3bba970d2ccecec1b56",
+      "bytes": 3772
+    },
+    {
+      "path": "effects/mixed-charms/scene.js",
+      "sha256": "3790e0f31eb5b80ea38d3f4d67e1504550f225443e150db4b2caf626e0956b8e",
+      "bytes": 6995
+    },
+    {
+      "path": "effects/mixed-charms/vendor/SOURCES.md",
+      "sha256": "e0ef51fe7a6b8646edb444cde3e3bd146e25b841480e555b7b12850c25b4f269",
+      "bytes": 746
+    },
+    {
+      "path": "effects/rain/assets/cloud-tall.png",
+      "sha256": "4cf006273307091462779a9e8c73b6b123c4d25e87d9ae829ee50b6a48c5de4d",
+      "bytes": 1996935
+    },
+    {
+      "path": "effects/rain/assets/rain-blue.png",
+      "sha256": "102350732508770f596b6a574678212df8a0f10df67155879e673f07ff1dc7ad",
+      "bytes": 2371757
+    },
+    {
+      "path": "effects/rain/assets/rain-curved-mist.png",
+      "sha256": "196f881f97f57e86c25cc7a0bbf742074ce79d924aabcabf8a6c1b597fcd7feb",
+      "bytes": 1955348
+    },
+    {
+      "path": "effects/rain/assets/rain-ivory.png",
+      "sha256": "8e9accce38ede5a37e0afdd42c7cc5cfbb4a45cda57e11d821c0c50372f13bc3",
+      "bytes": 2293934
+    },
+    {
+      "path": "effects/rain/assets/rain-round-coral.png",
+      "sha256": "98e4cc30b7f8f6a4c151bd01c7808e30f7267bc2811ba299b58faaa84a57a692",
+      "bytes": 1741861
+    },
+    {
+      "path": "effects/rain/assets/rain-slender-cobalt.png",
+      "sha256": "c4835544c42532ca1754962599597fae5b228b1481ae091c1497f67797bca1fc",
+      "bytes": 1632408
+    },
+    {
+      "path": "effects/rain/index.html",
+      "sha256": "2ae70edee02cb9305f9271421ed57d353a86df946016ddf17f4912d311e6fcad",
+      "bytes": 1363
+    },
+    {
+      "path": "effects/rain/scene-config.js",
+      "sha256": "8999ac90387559e04d874e37c41f14de1ec77dedbfedd557100b92323c8c467c",
+      "bytes": 6167
+    },
+    {
+      "path": "effects/rain/scene.js",
+      "sha256": "2697faa6ce829ef4a76a4703cd5c16c9c03aba4f01d43f9008ed1e1f39964a6a",
+      "bytes": 16793
+    },
+    {
+      "path": "effects/shared/charms-material.js",
+      "sha256": "b31975efb930824a02a144634957de363c04f430d22ed77d00445bf10421a1ef",
+      "bytes": 9613
+    },
+    {
+      "path": "effects/shared/controls.js",
+      "sha256": "b37b4e61028fbc2a1e5cc91b280bc909aa76a60209e2f31a90b8bb1887ddd016",
+      "bytes": 6989
+    },
+    {
+      "path": "effects/shared/flow-runtime.js",
+      "sha256": "23b43e4d59b7ad439248173f3ac42ab9ba3fd642c2ee6ee45a10cb5fce27f257",
+      "bytes": 729
+    },
+    {
+      "path": "effects/shared/style.css",
+      "sha256": "31adba2307f5f722bf941812a0a7c0581032973f6705e556868cf24fe4a84454",
+      "bytes": 3458
+    },
+    {
+      "path": "effects/snow/index.html",
+      "sha256": "21cf623e108f54ddbb03975b70fc79ab74e19f90e83512beaa1d5f3db8caa651",
+      "bytes": 1382
+    },
+    {
+      "path": "effects/snow/scene-config.js",
+      "sha256": "515b6859b6db8a4d0d8c6bc378aa22f7ef3eb33ebc7e94f52cd5a57199b3c9a4",
+      "bytes": 1522
+    },
+    {
+      "path": "effects/snow/scene.js",
+      "sha256": "870c73adcb506d693d23e190bb8ed1dc4e354699bb4b65f5ab343b5d3fccfa1f",
+      "bytes": 6612
+    },
+    {
+      "path": "extensions/aroma/README.md",
+      "sha256": "40acd9cc4d4a7a98e24feca14a2f456bbe29dc871f80c089c5bb05fd48596c0a",
+      "bytes": 861
+    },
+    {
+      "path": "extensions/aroma/create.mjs",
+      "sha256": "48c50f678ba6f270e6cdb5f6b9483bf1b3a13fd5aac970046d7362151d78875e",
+      "bytes": 2485
+    },
+    {
+      "path": "extensions/aroma/template/controls.js",
+      "sha256": "b37b4e61028fbc2a1e5cc91b280bc909aa76a60209e2f31a90b8bb1887ddd016",
+      "bytes": 6989
+    },
+    {
+      "path": "extensions/aroma/template/flow-runtime.js",
+      "sha256": "23b43e4d59b7ad439248173f3ac42ab9ba3fd642c2ee6ee45a10cb5fce27f257",
+      "bytes": 729
+    },
+    {
+      "path": "extensions/aroma/template/index.html",
+      "sha256": "0dca52f01099960c4b6695b1a8663997f61d04592e7991e3cf0fe314e0b9c8b5",
+      "bytes": 1361
+    },
+    {
+      "path": "extensions/aroma/template/scene.js",
+      "sha256": "a5a99283acbd69cc10fd2a68f1080bcf61a663fd68d1e5ad618e6e400a6ec547",
+      "bytes": 3941
+    },
+    {
+      "path": "extensions/aroma/template/style.css",
+      "sha256": "31adba2307f5f722bf941812a0a7c0581032973f6705e556868cf24fe4a84454",
+      "bytes": 3458
+    },
+    {
+      "path": "extensions/aroma/test.mjs",
+      "sha256": "159ebc03f39e4eac4b8b793fdd61790a756254df0e0ac723983795ad97457f28",
+      "bytes": 1014
+    },
+    {
+      "path": "extensions/catalog.json",
+      "sha256": "b0d538b7c5994c458292c8d0a676c195e41deb44b1ce1ffde2e33b00c8e203fa",
+      "bytes": 204
+    },
+    {
+      "path": "faces/catalog.json",
+      "sha256": "7f0974441764f5802e44ecdedadd4afb573e958c684e7378694eab3e61a3335d",
+      "bytes": 2089
+    },
+    {
+      "path": "native/.gitignore",
+      "sha256": "99921edb369e12a35a87d768ae481f8c944573626abd4b8f3a1fe78846f30ba7",
+      "bytes": 8
+    },
+    {
+      "path": "native/Info.plist",
+      "sha256": "76996f8cac4446043e496220c6b584de7ad2673863fe5a7fa9f397312f53bacb",
+      "bytes": 990
+    },
+    {
+      "path": "native/LiveGrade.swift",
+      "sha256": "ecb2aa22bc852b8ba3a24234a60484e29fb48599981ef7c5d7cdbc199fb14401",
+      "bytes": 13149
+    },
+    {
+      "path": "native/LivePhotoTool.swift",
+      "sha256": "f48e103add1999c0ef05727b8d3821d97fa4282212f52ebd84a865aa79550142",
+      "bytes": 26414
+    },
+    {
+      "path": "native/NormalizeImage.swift",
+      "sha256": "0251ad1c4a03c93cb986024fb37c53d19ae38bb5178236cd543d77394ed80d39",
+      "bytes": 4056
+    },
+    {
+      "path": "native/README.md",
+      "sha256": "c06eda10cc79dcb4ed43dbf54111f11dee04a22a23534641dd6ca5d2ce8d235e",
+      "bytes": 7598
+    },
+    {
+      "path": "package.json",
+      "sha256": "d70c7c4aa8883ef401c7ebef82226bad8a1c69c8917965b52fa3cb805eabb173",
+      "bytes": 303
+    },
+    {
+      "path": "prompts/manifest.json",
+      "sha256": "3c670e00fec1c7b3d644f96fa63f126fe62a70ff74856c07df5354af3ee89cb1",
+      "bytes": 141
+    },
+    {
+      "path": "prompts/quiet-plog.md",
+      "sha256": "da20b2dcbfe17e2bb8dd5c91820d84265f7f60357b211f11aaa9e88c6fcf98ca",
+      "bytes": 3454
+    },
+    {
+      "path": "references/acceptance.md",
+      "sha256": "109398bbf992b9c8f632b506b16ea9788b0b2fcef8cd7577ec8bae26e88a6273",
+      "bytes": 929
+    },
+    {
+      "path": "references/effects.md",
+      "sha256": "1650aa0381a010523b19287de7e96b8e05103b1c83d17fe0850a38bfa61d0435",
+      "bytes": 1787
+    },
+    {
+      "path": "references/live-photo.md",
+      "sha256": "35a75878ae972a94776792c6da66da4c11d4558fd769e96596bd2bdce0fdb5a0",
+      "bytes": 3334
+    },
+    {
+      "path": "references/motion-layout.md",
+      "sha256": "c7ebeb52022399d006b25db5830befcdce5877c0117710d5c93823a85cb1dbaf",
+      "bytes": 2973
+    },
+    {
+      "path": "references/photography.md",
+      "sha256": "b94c6b42ae19ed58942b14c570f0ae5871222e178db8e3f218be9ebec4e47cfa",
+      "bytes": 1856
+    },
+    {
+      "path": "references/visual-baseline.md",
+      "sha256": "af2b89f32abff9bf77609958d1e886dd9877d449f15050fe8aae423b53ab5ea0",
+      "bytes": 435
+    },
+    {
+      "path": "scripts/chrome-render.mjs",
+      "sha256": "e289d5ccf767937cc11f94ee81dc3c277574081f264fa8fcd638e6ae7c3d8ee3",
+      "bytes": 4907
+    },
+    {
+      "path": "scripts/cli.mjs",
+      "sha256": "435529c3826ae468d5399399a23b50a538f5a05e5a40c3da51a48bc153cf3954",
+      "bytes": 989
+    },
+    {
+      "path": "scripts/create-scene.mjs",
+      "sha256": "a46e12614ed1fea4305c9dbe8996c26dec680942386096e62dcdef9a3d10282a",
+      "bytes": 3983
+    },
+    {
+      "path": "scripts/delivery.mjs",
+      "sha256": "db28c8ab2375510416a65bf3a1a4a97b8b0b758d1013d4dd9daaa11b25adc2dc",
+      "bytes": 4011
+    },
+    {
+      "path": "scripts/flow-runtime.js",
+      "sha256": "23b43e4d59b7ad439248173f3ac42ab9ba3fd642c2ee6ee45a10cb5fce27f257",
+      "bytes": 729
+    },
+    {
+      "path": "scripts/lib.mjs",
+      "sha256": "9c5c5f55477268590b29b907b8df8f28bf88ed85937e9ac262a7d3d001af8b74",
+      "bytes": 1580
+    },
+    {
+      "path": "scripts/live-grade.sh",
+      "sha256": "01903bbf442d4ca84c92887dfd13259dabf4861f61e32d1f32659527480f7ced",
+      "bytes": 776
+    },
+    {
+      "path": "scripts/live-photo.sh",
+      "sha256": "3a9df21c31996ffc73071ca75ca725894868f33977a4e2f03f655b76074e8754",
+      "bytes": 3909
+    },
+    {
+      "path": "scripts/motion-layout.mjs",
+      "sha256": "b9378b2ddf83446f9d21ff7e8158f105a029fc8ae7d79128ee921a43a5ce0941",
+      "bytes": 1996
+    },
+    {
+      "path": "scripts/normalize-image.sh",
+      "sha256": "e4fc519348271a7bdc7160c280cc5ed00f9d6629d382c841307d5d77415898f0",
+      "bytes": 783
+    },
+    {
+      "path": "scripts/normalize-input.mjs",
+      "sha256": "0512e01c981ba4b272238c03f54a4bbfd35a313e2cb3928f9858f7e2b6ad15b8",
+      "bytes": 2148
+    },
+    {
+      "path": "scripts/photo-prompt.mjs",
+      "sha256": "d3aeea65b1cde3bc1abb8536723d3d0d6209d30a38874f9a5bac2d57e8e80c42",
+      "bytes": 997
+    },
+    {
+      "path": "scripts/plog.mjs",
+      "sha256": "7e616298a9d05fc09628543d623394eaf686f29ea89fe3ae15203d62804d97a4",
+      "bytes": 18708
+    },
+    {
+      "path": "scripts/render-faces.mjs",
+      "sha256": "f3f0661e6b5bdc3ad6974caf687dc1fa9d122b97362775b4878dca04c5f35ce9",
+      "bytes": 1988
+    },
+    {
+      "path": "scripts/render-scene.mjs",
+      "sha256": "f28e1fc4b43b37f9a3324e2f66282e259354244b037a4ddbbfff0185403e5c41",
+      "bytes": 9112
+    },
+    {
+      "path": "scripts/scene-inspect.mjs",
+      "sha256": "1eaf8e3430d228fe733f8ce6b6a5b42802e5273ef7a691e2b5ce6324216adfd9",
+      "bytes": 1431
+    },
+    {
+      "path": "scripts/test-bundle.mjs",
+      "sha256": "c997b0127c90d51a0b130c7dd2aef8b8fcb05389a9d5e6d460be545b469de363",
+      "bytes": 1804
+    },
+    {
+      "path": "scripts/verify-bundle.mjs",
+      "sha256": "32f72ebd90c8a8c054b51a70d25e10021634310cabef62793d1b07d0e7eec7fd",
+      "bytes": 1293
+    },
+    {
+      "path": "scripts/verify-motion.mjs",
+      "sha256": "d128f0bd14ac95e18cd58e09f6639093056116a4b9b70d6f97d6ba663818da9c",
+      "bytes": 2535
+    },
+    {
+      "path": "scripts/verify-visual-baseline.mjs",
+      "sha256": "4a4bacad6ca26231963336cb46c065a02f7e488d9f37bd0ed7cc814a5dcf5026",
+      "bytes": 94
+    },
+    {
+      "path": "templates/preview/compare.css",
+      "sha256": "f23e17218fa863d03da15e3a6ae2a2786cc57116f8ef5d88046cd61a1402aee0",
+      "bytes": 1279
+    },
+    {
+      "path": "templates/preview/compare.js",
+      "sha256": "2991f7e976ff63f67473a7bd3b50206f2810816fe40322643ea21fd0bf4f10f4",
+      "bytes": 2977
+    },
+    {
+      "path": "templates/preview/controls.css",
+      "sha256": "7cbe6a4a19c6b2f0976701ed72b307bca13d72a928387bac1973cec86543ef70",
+      "bytes": 1382
+    },
+    {
+      "path": "templates/preview/controls.js",
+      "sha256": "f81e350808f0af231d37195b59890899108011606990d672f2fd5be00e60d503",
+      "bytes": 2107
+    },
+    {
+      "path": "templates/scene/controls.js",
+      "sha256": "6fe0200c48c883673f54c05e56b0f5d3f3816791b005580baf0c1e60d03b3ab1",
+      "bytes": 6943
+    },
+    {
+      "path": "templates/scene/index.html",
+      "sha256": "2a36496b010bd81513ad7dc36c1823afe9bf5a41d214ee27f4c9f532af3c8776",
+      "bytes": 1322
+    },
+    {
+      "path": "templates/scene/scene-config.js",
+      "sha256": "14a316ebe11762a06f5deaca831b16851526d45127a07760d683a2a95a378d50",
+      "bytes": 499
+    },
+    {
+      "path": "templates/scene/scene.js",
+      "sha256": "b5a867a17c05188dd96e1938018f1625efd5de604649437e585f42306747e3ae",
+      "bytes": 13436
+    },
+    {
+      "path": "templates/scene/style.css",
+      "sha256": "31adba2307f5f722bf941812a0a7c0581032973f6705e556868cf24fe4a84454",
+      "bytes": 3458
+    },
+    {
+      "path": "tests/bundle-integrity.mjs",
+      "sha256": "2314fd3f5af05bbaecc619dc43f9e857e0d4eeabcf8813074db45fcb5ea5f423",
+      "bytes": 1937
+    },
+    {
+      "path": "tests/check.mjs",
+      "sha256": "0e4a223013442ca19eb69a0bd6d20a7ad6f8ef47f3e8867facd8bbeb73664e45",
+      "bytes": 4972
+    },
+    {
+      "path": "tests/motion-layout.mjs",
+      "sha256": "20f42cc0b0dc0df73a0663ddfedc76f123c3c73b678632d50ab19bb2c5863288",
+      "bytes": 1999
+    },
+    {
+      "path": "tests/native-build.mjs",
+      "sha256": "c70e68f84a2fcf2be3c3629b59020bc9df38e3d872790838b91533c1351ad1c3",
+      "bytes": 3141
+    },
+    {
+      "path": "tests/scene-files.mjs",
+      "sha256": "afd8854aba9b57299defff9b00b5c2d76036491ff50f3e3b8c22b59ec669717e",
+      "bytes": 2189
+    }
+  ]
+}

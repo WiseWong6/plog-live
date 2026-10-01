@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import vm from 'node:vm';
+import {validateMotionLayout} from '../scripts/motion-layout.mjs';
+const config={duration:8,fps:30,keyTime:4,flakes:[{from:[.05,-.1],to:[.05,1.1],depth:'near'},{from:[.5,-.1],to:[.5,1.1],depth:'near'},{from:[.95,-.1],to:[.95,1.1],depth:'far'}]},motionPlan={intent:'雪花飘过蛋糕',anchor:'中央蛋糕',direction:'全幅向下',depth:'少量在前',overlap:'允许过食物',scope:'full-frame'},spec={config,motionPlan,subjectRegions:[{x:.3,y:.3,width:.4,height:.5}]};
+validateMotionLayout(spec,'snow');
+const narrow=structuredClone(spec);narrow.config.flakes.forEach(f=>f.from[0]=f.to[0]=.98);assert.throws(()=>validateMotionLayout(narrow,'snow'),/窄带/);
+const far=structuredClone(spec);far.config.flakes.forEach(f=>f.depth='far');assert.throws(()=>validateMotionLayout(far,'snow'),/前层/);
+const bubbles={...spec,motionPlan:{...motionPlan,scope:'scene-flow',attachment:'cup',origins:[{cx:.4,cy:.5,rx:.1,ry:.03}]},config:{duration:6,fps:30,keyTime:3,cupOrigin:true,bubbles:[{from:[.41,.50],to:[.45,-.1]}]}};
+validateMotionLayout(bubbles,'bubbles');bubbles.config.bubbles[0].from=[.9,.9];assert.throws(()=>validateMotionLayout(bubbles,'bubbles'),/杯口/);
+assert.throws(()=>validateMotionLayout({...spec,motionPlan:undefined},'snow'),/意图/);
+const window={};vm.runInNewContext(await readFile(new URL('../scripts/flow-runtime.js',import.meta.url),'utf8'),{window});const a=window.PlogFlow;
+const c={captionProtection:'local-fade',safeRects:[{x:.8,y:.1,width:.12,height:.04}]};assert.equal(a.alpha({x:.5,y:.5,radius:.02},c,1.5),1,'主体中央仍完整显示');assert.equal(a.alpha({x:.86,y:.12,radius:.02},c,1.5),0,'文字本身被保护');assert.equal(a.birth(0),0);assert.equal(a.birth(.1),1);
+assert.deepEqual(Array.from(a.quadratic([0,0],[.5,1],[1,0],.5)),[.5,.5]);
+console.log('通过：全幅覆盖、前层交叠、杯口出生、文字局部保护、曲线路径。');
