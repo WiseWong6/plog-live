@@ -16,17 +16,17 @@ window.PLOG_CONFIG = {
       "label": "英文小字"
     }
   ],
-  "foregroundPath": "M .249 .516 C .276 .451 .337 .417 .452 .421 C .580 .416 .655 .453 .683 .518 L .704 .595 L .679 .647 L .632 .668 L .543 .668 L .515 .733 L .446 .904 L .376 1 L 0 1 L .099 .794 L .164 .663 Z",
+  "foregroundPath": "",
   "flakes": [
     {
       "id": "butterfly-1",
       "kind": "butterfly",
       "material": "paper",
       "outline": false,
-      "phase": 0.0,
+      "phase": 0.78,
       "to": [
-        1.08,
-        0.24
+        0.44,
+        -0.1
       ],
       "radius": 0.018865,
       "drift": 0.011,
@@ -34,20 +34,24 @@ window.PLOG_CONFIG = {
       "depth": "near",
       "rotation": 0.35,
       "from": [
-        -0.08,
-        0.035
+        0.22,
+        1.1
       ],
-      "color": "#e5d7ae"
+      "color": "#e5d7ae",
+      "control": [
+        0.6,
+        0.65
+      ]
     },
     {
       "id": "butterfly-2",
       "kind": "butterfly",
       "material": "paper",
       "outline": false,
-      "phase": 0.6,
+      "phase": 4.26,
       "to": [
-        1.08,
-        0.33
+        0.31,
+        -0.1
       ],
       "radius": 0.015785,
       "drift": 0.011,
@@ -55,20 +59,24 @@ window.PLOG_CONFIG = {
       "depth": "near",
       "rotation": 1.72,
       "from": [
-        -0.08,
-        0.135
+        0.66,
+        1.1
       ],
-      "color": "#c8cbb5"
+      "color": "#c8cbb5",
+      "control": [
+        0.22,
+        0.35
+      ]
     },
     {
       "id": "butterfly-3",
       "kind": "butterfly",
       "material": "paper",
       "outline": false,
-      "phase": 1.2,
+      "phase": 2.16,
       "to": [
-        1.08,
-        0.19
+        0.68,
+        -0.1
       ],
       "radius": 0.01386,
       "drift": 0.011,
@@ -76,20 +84,24 @@ window.PLOG_CONFIG = {
       "depth": "near",
       "rotation": 3.09,
       "from": [
-        -0.08,
-        -0.015
+        0.39,
+        1.1
       ],
-      "color": "#c4d3cb"
+      "color": "#c4d3cb",
+      "control": [
+        0.82,
+        0.54
+      ]
     },
     {
       "id": "butterfly-4",
       "kind": "butterfly",
       "material": "paper",
       "outline": false,
-      "phase": 1.8,
+      "phase": 5.46,
       "to": [
-        1.095,
-        0.28
+        0.55,
+        -0.1
       ],
       "radius": 0.01694,
       "drift": 0.011,
@@ -97,20 +109,24 @@ window.PLOG_CONFIG = {
       "depth": "near",
       "rotation": 4.46,
       "from": [
-        -0.095,
-        0.075
+        0.79,
+        1.1
       ],
-      "color": "#dcd6bd"
+      "color": "#dcd6bd",
+      "control": [
+        0.4,
+        0.71
+      ]
     },
     {
       "id": "butterfly-5",
       "kind": "butterfly",
       "material": "paper",
       "outline": false,
-      "phase": 2.4,
+      "phase": 3.18,
       "to": [
-        1.08,
-        0.31
+        0.19,
+        -0.1
       ],
       "radius": 0.015015,
       "drift": 0.011,
@@ -118,115 +134,18 @@ window.PLOG_CONFIG = {
       "depth": "near",
       "rotation": 5.83,
       "from": [
-        -0.08,
-        0.105
+        0.5,
+        1.1
       ],
-      "color": "#d3d7c2"
-    },
-    {
-      "id": "butterfly-6",
-      "kind": "butterfly",
-      "material": "paper",
-      "outline": false,
-      "phase": 3.0,
-      "to": [
-        1.08,
-        0.252
-      ],
-      "radius": 0.018865,
-      "drift": 0.011,
-      "opacity": 0.93,
-      "depth": "near",
-      "rotation": 7.2,
-      "from": [
-        -0.08,
-        0.047
-      ],
-      "color": "#e5d7ae"
-    },
-    {
-      "id": "butterfly-7",
-      "kind": "butterfly",
-      "material": "paper",
-      "outline": false,
-      "phase": 3.6,
-      "to": [
-        1.08,
-        0.342
-      ],
-      "radius": 0.015785,
-      "drift": 0.011,
-      "opacity": 0.93,
-      "depth": "near",
-      "rotation": 8.57,
-      "from": [
-        -0.08,
-        0.147
-      ],
-      "color": "#c8cbb5"
-    },
-    {
-      "id": "butterfly-8",
-      "kind": "butterfly",
-      "material": "paper",
-      "outline": false,
-      "phase": 4.2,
-      "to": [
-        1.08,
-        0.202
-      ],
-      "radius": 0.01386,
-      "drift": 0.011,
-      "opacity": 0.93,
-      "depth": "near",
-      "rotation": 9.94,
-      "from": [
-        -0.08,
-        -0.003
-      ],
-      "color": "#c4d3cb"
-    },
-    {
-      "id": "butterfly-9",
-      "kind": "butterfly",
-      "material": "paper",
-      "outline": false,
-      "phase": 4.8,
-      "to": [
-        1.095,
-        0.292
-      ],
-      "radius": 0.01694,
-      "drift": 0.011,
-      "opacity": 0.93,
-      "depth": "near",
-      "rotation": 11.31,
-      "from": [
-        -0.095,
-        0.087
-      ],
-      "color": "#dcd6bd"
-    },
-    {
-      "id": "butterfly-10",
-      "kind": "butterfly",
-      "material": "paper",
-      "outline": false,
-      "phase": 5.4,
-      "to": [
-        1.08,
-        0.322
-      ],
-      "radius": 0.015015,
-      "drift": 0.011,
-      "opacity": 0.93,
-      "depth": "near",
-      "rotation": 12.68,
-      "from": [
-        -0.08,
-        0.117
-      ],
-      "color": "#d3d7c2"
+      "color": "#d3d7c2",
+      "control": [
+        0.12,
+        0.29
+      ]
     }
-  ]
+  ],
+  "screenOnly": true,
+  "mintMask": [],
+  "captionProtection": "local-fade",
+  "flightDirection": "bottom-to-top"
 };

@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "README.md",
-      "sha256": "60bb9bfe2e13f60ad08833c2dc09c5ecae6e21c7d014fe6af0a87bed639bca93",
-      "bytes": 2767
+      "sha256": "0f74eb3a3b85b85c8248b08345aa17bc94d6ca4cf9cd53357918084bf40b7788",
+      "bytes": 3123
     },
     {
       "path": "SKILL.md",
-      "sha256": "cf05b25333a4b73533c66f9e12df8e70f748cc2cd347d0ef9e66499309e19ae0",
-      "bytes": 5186
+      "sha256": "4333ce5401b0fb0436b6454dcf2eed7be87af933900c44be5539181f27f6ad62",
+      "bytes": 5705
     },
     {
       "path": "agents/openai.yaml",
@@ -18,18 +18,18 @@
     },
     {
       "path": "effects/birds/index.html",
-      "sha256": "bfffd264ca7bc46d7b3b70aaad7222d674895b79089a2a5606f4c3b0d4f9a94f",
-      "bytes": 1394
+      "sha256": "57076d59540ad898e258aef8403d874c6e01929f95c04c840f7a33a78c26128c",
+      "bytes": 1376
     },
     {
       "path": "effects/birds/scene-config.js",
-      "sha256": "9b06aeb2d0325c67e818d5d92ad24543595ce4d7e199ff58bad74a3f95f8b6e9",
-      "bytes": 2295
+      "sha256": "f845f3e6352b3b8552d6618b374422951690aedbd1e154645bb94740d4ba0814",
+      "bytes": 1957
     },
     {
       "path": "effects/birds/scene.js",
-      "sha256": "a7c8a586578247b1bd7008da379ff4f1b979fe4329a434997e3622f055aa1ce4",
-      "bytes": 7514
+      "sha256": "cdcb53728f6ff5756a7060f5f679ab11d9438678e8502c1cfdd3b1caea66c2f7",
+      "bytes": 7535
     },
     {
       "path": "effects/bubbles/index.html",
@@ -83,18 +83,18 @@
     },
     {
       "path": "effects/butterflies/index.html",
-      "sha256": "373c5c5496f1a96f3718041c181b15a92e93e298e85e50f3be9d15d594012d74",
-      "bytes": 1440
+      "sha256": "5c818390549c7e1a91a3794dbbebedf584fefcfaad0c0ad62c2eee11386b272e",
+      "bytes": 1443
     },
     {
       "path": "effects/butterflies/scene-config.js",
-      "sha256": "f2462235b82e6d4b81d28045161138bc7f65889e1fa6464cbb6da12c2a94ec77",
-      "bytes": 4418
+      "sha256": "3ae363944d7de12f480491143c0301ad6705d4f7ae525571e144fb304ebeb5f3",
+      "bytes": 2671
     },
     {
       "path": "effects/butterflies/scene.js",
-      "sha256": "9e26e8b86776be1afcda43b808aa2cbaf8dacb76075f2d7a05a4e8a9fcbca064",
-      "bytes": 7456
+      "sha256": "863c5d92b4f5bc203a5e557c48fb0ad26a7233dd53da9245378d635aff7a0214",
+      "bytes": 7498
     },
     {
       "path": "effects/butterflies/vendor/SOURCES.md",
@@ -118,8 +118,8 @@
     },
     {
       "path": "effects/falling-moons/scene-config.js",
-      "sha256": "f44738da3160a4af309412a26ad2b880da70b94440dd13cb6ca751b2dce2ed18",
-      "bytes": 2692
+      "sha256": "646a6540c7b19157009334c763c90ca65a1f11e7822e62b4bf1b1b62bb5ee7ac",
+      "bytes": 2662
     },
     {
       "path": "effects/falling-moons/scene.js",
@@ -143,8 +143,8 @@
     },
     {
       "path": "effects/falling-petals/scene-config.js",
-      "sha256": "2c31246f3107131a068844d9df02ef35c56971dea544f36a8fd297066c6cfca8",
-      "bytes": 2711
+      "sha256": "6d4af32150c9398731a350111ed8bd310043886883acf4fa50ea295ce8ea3fe9",
+      "bytes": 2681
     },
     {
       "path": "effects/falling-petals/scene.js",
@@ -158,8 +158,8 @@
     },
     {
       "path": "effects/falling-stars/scene-config.js",
-      "sha256": "4320940f6ee0238f447ea47fbe13283f418aa59227e52a66537c23129faecfea",
-      "bytes": 3361
+      "sha256": "a733286dc182e749b91e3e1324a0a492826c0f67c79f52d78c0e8b410b0fa583",
+      "bytes": 3393
     },
     {
       "path": "effects/falling-stars/scene.js",
@@ -208,8 +208,8 @@
     },
     {
       "path": "effects/mixed-charms/scene-config.js",
-      "sha256": "9651e6c0977c7f419aeef6cc61482d4f5be8e6bab0a1f3bba970d2ccecec1b56",
-      "bytes": 3772
+      "sha256": "eee264d91973dd6cbc741e6823e4eae3dcb605352a9748464430c8635f889e0f",
+      "bytes": 3811
     },
     {
       "path": "effects/mixed-charms/scene.js",
@@ -293,8 +293,8 @@
     },
     {
       "path": "effects/snow/scene-config.js",
-      "sha256": "515b6859b6db8a4d0d8c6bc378aa22f7ef3eb33ebc7e94f52cd5a57199b3c9a4",
-      "bytes": 1522
+      "sha256": "2e0925354b4984b547d163c95f7807546a7434c0901a204932c3285728f41dcd",
+      "bytes": 2781
     },
     {
       "path": "effects/snow/scene.js",
@@ -398,13 +398,13 @@
     },
     {
       "path": "references/acceptance.md",
-      "sha256": "109398bbf992b9c8f632b506b16ea9788b0b2fcef8cd7577ec8bae26e88a6273",
-      "bytes": 929
+      "sha256": "708e2ce3fde9fbb9feffe1dbfe872b694db1c934eef48964eea1fda7e2cdd5df",
+      "bytes": 1183
     },
     {
       "path": "references/effects.md",
-      "sha256": "1650aa0381a010523b19287de7e96b8e05103b1c83d17fe0850a38bfa61d0435",
-      "bytes": 1787
+      "sha256": "56b4e291364cc20f1c4ee6bafa9071998c0244ec564727c1c5a3cbf5e6020541",
+      "bytes": 2213
     },
     {
       "path": "references/live-photo.md",
@@ -413,8 +413,8 @@
     },
     {
       "path": "references/motion-layout.md",
-      "sha256": "c7ebeb52022399d006b25db5830befcdce5877c0117710d5c93823a85cb1dbaf",
-      "bytes": 2973
+      "sha256": "7ca86bcb33151508e3383f072452478d841ae8a8e9b133bba11435fe6f70c3d2",
+      "bytes": 4923
     },
     {
       "path": "references/photography.md",
@@ -468,8 +468,8 @@
     },
     {
       "path": "scripts/motion-layout.mjs",
-      "sha256": "b9378b2ddf83446f9d21ff7e8158f105a029fc8ae7d79128ee921a43a5ce0941",
-      "bytes": 1996
+      "sha256": "9b622e3cbf0ab3cd321eed9cc97587aafedb2c32a8dbd0c61daf447f540fb163",
+      "bytes": 6195
     },
     {
       "path": "scripts/normalize-image.sh",
@@ -508,8 +508,8 @@
     },
     {
       "path": "scripts/test-bundle.mjs",
-      "sha256": "c997b0127c90d51a0b130c7dd2aef8b8fcb05389a9d5e6d460be545b469de363",
-      "bytes": 1804
+      "sha256": "9ec928eb97116aee8321f99e38f4114c6c4cc1a2b3baaafe4225a8c62d904b81",
+      "bytes": 1860
     },
     {
       "path": "scripts/verify-bundle.mjs",
@@ -583,8 +583,13 @@
     },
     {
       "path": "tests/motion-layout.mjs",
-      "sha256": "20f42cc0b0dc0df73a0663ddfedc76f123c3c73b678632d50ab19bb2c5863288",
-      "bytes": 1999
+      "sha256": "ec6a7f78a67cce3fcb97412e8a89cfd2986a34afa8af2c0a80d777069f37fea7",
+      "bytes": 3636
+    },
+    {
+      "path": "tests/motion-scenes.mjs",
+      "sha256": "bfe1527774c03a60da13c18ac6092ce1b386763028ecb4fb0de9db267d2742d7",
+      "bytes": 3710
     },
     {
       "path": "tests/native-build.mjs",
@@ -593,8 +598,8 @@
     },
     {
       "path": "tests/scene-files.mjs",
-      "sha256": "afd8854aba9b57299defff9b00b5c2d76036491ff50f3e3b8c22b59ec669717e",
-      "bytes": 2189
+      "sha256": "a22b1293559697de24e928fa226333c0713ff45b91edeff76428756a77a1e57b",
+      "bytes": 2216
     }
   ]
 }

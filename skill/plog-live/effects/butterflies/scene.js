@@ -6,7 +6,7 @@ function validateEffect(){
  if(!Array.isArray(config.flakes)||(config.flakes.length<3||config.flakes.length>10))throw new Error('蝴蝶掠过使用三至十只错开的蝴蝶。');
  for(const f of config.flakes){
   if(f.kind!=='butterfly'||(f.material!=='paper'||!/^#[0-9a-f]{6}$/i.test(f.color))||f.outline!==false)throw new Error('蝴蝶材质配置错误。');
-  if(![f.phase,f.radius,f.drift,f.opacity,f.rotation,...f.from,...f.to].every(Number.isFinite)||f.phase<0||f.phase>=config.duration||f.radius<.007||f.radius>.03||f.opacity<.5||f.opacity>1||Math.abs(f.drift)>.015)throw new Error('蝴蝶须从左上进入、右下完整离开。');
+  if(![f.phase,f.radius,f.drift,f.opacity,f.rotation,...f.from,...f.to].every(Number.isFinite)||f.phase<0||f.phase>=config.duration||f.radius<.007||f.radius>.03||f.opacity<.5||f.opacity>1||Math.abs(f.drift)>.015)throw new Error('蝴蝶尺寸、时间或轻摆参数无效；飞行方向由当前照片的路径决定。');
  }
  for(const f of config.flakes)if(f.control&&(!Array.isArray(f.control)||f.control.length!==2||!f.control.every(v=>Number.isFinite(v)&&v>=-.5&&v<=1.5)))throw new Error('蝴蝶转弯位置无效。');
  for(const f of config.flakes){const r=f.radius*1.55+.002,outside=p=>p[0]+r<0||p[0]-r>1||p[1]+r*config.width/config.height<0||p[1]-r*config.width/config.height>1;if(!outside(f.from)||!outside(f.to))throw new Error('蝶翼须在画外完整进入和离开。');}

@@ -20,7 +20,7 @@ window.PLOG_CONFIG = {
   "flakes": [
     {
       "id": "star-1",
-      "phase": 0,
+      "phase": 1.932909,
       "from": [
         0.322,
         -0.034
@@ -39,7 +39,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "star-2",
-      "phase": 0.375,
+      "phase": 0.469582,
       "from": [
         0.426,
         -0.034
@@ -58,7 +58,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "star-3",
-      "phase": 0.75,
+      "phase": 1.574095,
       "from": [
         0.537,
         -0.034
@@ -77,7 +77,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "star-4",
-      "phase": 1.125,
+      "phase": 0.979604,
       "from": [
         0.369,
         -0.034
@@ -96,7 +96,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "star-5",
-      "phase": 1.5,
+      "phase": 2.303772,
       "from": [
         0.577,
         -0.034
@@ -115,7 +115,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "star-6",
-      "phase": 1.875,
+      "phase": 2.823627,
       "from": [
         0.473,
         -0.034
@@ -134,7 +134,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "star-7",
-      "phase": 2.25,
+      "phase": 1.290484,
       "from": [
         0.316,
         -0.034
@@ -153,7 +153,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "star-8",
-      "phase": 2.625,
+      "phase": 0.199528,
       "from": [
         0.506,
         -0.034

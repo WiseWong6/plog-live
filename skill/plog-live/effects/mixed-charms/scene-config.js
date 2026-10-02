@@ -23,7 +23,7 @@ window.PLOG_CONFIG = {
       "kind": "moon",
       "material": "silver",
       "outline": false,
-      "phase": 0.0,
+      "phase": 1.692102,
       "from": [
         0.315,
         -0.07
@@ -45,7 +45,7 @@ window.PLOG_CONFIG = {
       "kind": "star",
       "material": "gold",
       "outline": true,
-      "phase": 0.5,
+      "phase": 3.079809,
       "from": [
         0.48,
         -0.07
@@ -67,7 +67,7 @@ window.PLOG_CONFIG = {
       "kind": "flower",
       "material": "silver",
       "outline": false,
-      "phase": 1.0,
+      "phase": 0.065084,
       "from": [
         0.366,
         -0.07
@@ -89,7 +89,7 @@ window.PLOG_CONFIG = {
       "kind": "diamond",
       "material": "gold",
       "outline": true,
-      "phase": 1.5,
+      "phase": 3.80944,
       "from": [
         0.566,
         -0.07
@@ -111,7 +111,7 @@ window.PLOG_CONFIG = {
       "kind": "moon",
       "material": "gold",
       "outline": true,
-      "phase": 2.0,
+      "phase": 2.563381,
       "from": [
         0.448,
         -0.07
@@ -133,7 +133,7 @@ window.PLOG_CONFIG = {
       "kind": "spark",
       "material": "silver",
       "outline": false,
-      "phase": 2.5,
+      "phase": 2.438739,
       "from": [
         0.31,
         -0.07
@@ -155,7 +155,7 @@ window.PLOG_CONFIG = {
       "kind": "star",
       "material": "silver",
       "outline": false,
-      "phase": 3.0,
+      "phase": 1.430125,
       "from": [
         0.573,
         -0.07
@@ -177,7 +177,7 @@ window.PLOG_CONFIG = {
       "kind": "flower",
       "material": "gold",
       "outline": true,
-      "phase": 3.5,
+      "phase": 0.581047,
       "from": [
         0.5,
         -0.07

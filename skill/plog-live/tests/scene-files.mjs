@@ -10,7 +10,7 @@ const sha256=await fileHash(photo),catalog=await readJSON(join(ROOT,'effects/cat
 try {
  for(const effect of catalog){
   const config=await templateConfig(effect.id),out=join(directory,effect.id);
-  const layout={sourceSha256:sha256,reviewedForSource:true,placement:'surface',subjectRegions:[],captionRegions:[],motionPlan:{intent:'制作文件回归检查',anchor:'保留样片支点',direction:'保留配置方向',depth:'保留配置层次',overlap:'保留配置交叠'},config};
+  const layout={sourceSha256:sha256,reviewedForSource:true,placement:config.screenOnly?'screen':'surface',subjectRegions:[],captionRegions:[],motionPlan:{intent:'制作文件回归检查',anchor:'保留样片支点',direction:'保留配置方向',depth:'保留配置层次',overlap:'保留配置交叠'},config};
   const created=await createScene({photo,effect:effect.id,layout,out});
   assert.equal(await fileHash(join(out,created.config.photo)),sha256);
   const html=await readFile(join(out,'index.html'),'utf8');

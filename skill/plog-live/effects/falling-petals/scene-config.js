@@ -20,7 +20,7 @@ window.PLOG_CONFIG = {
   "flakes": [
     {
       "id": "petal-1",
-      "phase": 0.0,
+      "phase": 2.584793,
       "from": [
         0.322,
         -0.034
@@ -39,7 +39,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "petal-2",
-      "phase": 0.6666666666666666,
+      "phase": 1.723637,
       "from": [
         0.426,
         -0.034
@@ -58,7 +58,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "petal-3",
-      "phase": 1.3333333333333333,
+      "phase": 3.100186,
       "from": [
         0.537,
         -0.034
@@ -77,7 +77,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "petal-5",
-      "phase": 2.0,
+      "phase": 0.986665,
       "from": [
         0.577,
         -0.034
@@ -96,7 +96,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "petal-6",
-      "phase": 2.6666666666666665,
+      "phase": 0.379515,
       "from": [
         0.473,
         -0.034
@@ -115,7 +115,7 @@ window.PLOG_CONFIG = {
     },
     {
       "id": "petal-8",
-      "phase": 3.3333333333333335,
+      "phase": 3.577532,
       "from": [
         0.506,
         -0.034

@@ -44,6 +44,8 @@ node scripts/plog.mjs grade --job /任务目录 --result /调色结果.png --pro
 
 从 `effects/catalog.json` 选择效果，读取对应 `scene-config.js`。保留素材造型，按当前画面重新确定尺寸、密度、速度、路径和遮挡。装饰可以经过主体，只局部避让文字和人脸关键细节。
 
+飘落元素先按当前照片摆路径，再用 `scripts/motion-layout.mjs` 的 `scatterFalling(config, sourceSha256)` 打散起始时间并保存完整配置；禁止按横坐标依次等间隔下落。鸟蝶必须按构图选择 `flightDirection`，可用同文件的 `redirectFlight(config, direction)` 转动完整飞行曲线，左右上下均可。同批照片逐张说明方向依据，不照搬同一方向与同一上沿队列。首帧、封面和中途的分布都要检查，不能只检查“会动”。
+
 按[动线规范](references/motion-layout.md)设计，再按[布局格式](references/effects.md)生成 `/动效布局.json`。原动态使用全幅飘落、掠过等屏幕装饰；需要杯口、盘沿跟随的贴附效果暂不支持。
 
 可选食物表情从 `faces/catalog.json` 选取，在 `grade` 加 `--face-layout /表情布局.json`；表情保持静态，布丁和芝士蛋糕用白色。食物香气按[香气制作](extensions/aroma/README.md)执行。
