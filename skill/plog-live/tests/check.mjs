@@ -34,6 +34,13 @@ assert.deepEqual(request.referenced_image_paths,['/input/photo.jpg']);
 assert.equal(request.prompt,p1.prompt);
 assert(!existsSync(join(ROOT,'audio')));assert(!existsSync(join(ROOT,'frozen/quiet-food')));
 pass('纯提示词一致且只传原图，旧音效和参考图目录已移除');
+const captionDirectory=await mkdtemp(join(tmpdir(),'plog-test-caption-'));
+try {
+ const captionJob={photo:'unused-photo.jpg',mode:'style',out:join(captionDirectory,'job')};
+ for(const text of [undefined,'','   '])await assert.rejects(prepare({...captionJob,caption:text}),/按本图语义.*--caption/);
+ assert(!existsSync(captionJob.out),'缺少文案时不得生成任务目录或自动套用固定句子');
+} finally {await rm(captionDirectory,{recursive:true,force:true});}
+pass('新增英文前必须传入看图生成的短句；漏传或空文案时不创建任务、不使用固定默认文案');
 assert.equal(soundPolicy(), 'original');assert.equal(soundPolicy('mute'),'mute');assert.throws(()=>soundPolicy('candidate'),/声音策略/);
 await assert.rejects(prepare({sound:'candidate'}),/声音策略/);
 const rejectedJob=await mkdtemp(join(tmpdir(),'plog-test-sound-'));

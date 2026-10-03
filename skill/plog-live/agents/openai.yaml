@@ -1,6 +1,6 @@
 interface:
   display_name: "PLOG·日常奇遇"
-  short_description: "为日常照片调色、加字并制作装饰实况。"
+  short_description: "为日常照片调色，按图片含义在主体旁加英文小字并制作装饰实况。"
   default_prompt: "请使用 $plog-live 处理我提供的照片或实况素材。"
 policy:
   allow_implicit_invocation: false

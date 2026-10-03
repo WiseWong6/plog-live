@@ -9,10 +9,12 @@ description: 用户明确调用 plog-live 或选择 PLOG·日常奇遇时使用�
 
 **默认用照片调色、加字，再生成装饰动效。** 接收照片、JPG＋MOV 或单独视频：配对资源使用照片，视频留存；单独视频提取中点封面。每次新建任务目录，保留输入原件。
 
+准备任务前查看照片或视频中点封面，根据画面主体、状态和气氛逐图生成一句 2–5 词的自然英文，填入 `--caption`；留白较窄时选更短的句子。文案须贴合本图含义，不套固定句子或编造时间、地点与故事。用户指定文案时优先使用，无需逐句确认。已调色输入沿用已有文字，可省略文案参数。
+
 命令在本技能目录执行，输入和输出填绝对路径。完整流程需要 Node.js 22 或更新版本、FFmpeg、Chrome、macOS 26 及 Apple 命令行开发工具；图片尺寸识别与实况封装从第一步起就使用苹果解码器（见 [README](README.md)）。运行环境缺项时先如实说明缺什么、不能继续哪一步，不假称完成，也不自动安装依赖。
 
 ```sh
-node scripts/plog.mjs prepare --photo /原图.jpg --effect falling-stars --caption 'A little pause.' --out /任务目录
+node scripts/plog.mjs prepare --photo /原图.jpg --effect falling-stars --caption '<按本图语义生成的英文短句>' --out /任务目录
 ```
 
 按用户要求调整参数：
@@ -31,7 +33,7 @@ node scripts/plog.mjs prepare --photo /原图.jpg --effect falling-stars --capti
 ## 2. 调色与英文
 
 - **保持完整构图、原图比例和物件大小，不裁切、放大或添加镜头推进；编码只等比缩小。** 适度提高清晰度，让主体轮廓和原图已有的材质细节更清楚。
-- 先查看原图，读取 [quiet-plog.md](prompts/quiet-plog.md)，仅替换 `{{CAPTION}}`。英文默认一句 2–5 词，白色小号衬线体，放在食物、手和人脸之外的自然空隙。
+- 读取 [quiet-plog.md](prompts/quiet-plog.md)，使用准备阶段选定的文案；字体、字号及主体旁的文字位置按该提示词执行。
 - 图片调色工具随宿主环境判定：Codex 内仅允许内置 `image_gen.imagegen`；其他环境默认按平台自带图片能力处理，先确认实际可用、支持输入照片编辑的工具，`prepare` 时加 `--image-host other --image-tool 实际工具名`，没有可用工具时如实说明。仅传待编辑原图，按 `image-tool-request.json` 调用。工具配置、格式转换与来源文件见[图片处理](references/photography.md)。
 
 ```sh

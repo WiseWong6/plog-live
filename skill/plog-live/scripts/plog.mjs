@@ -6,13 +6,13 @@ import {ROOT,readJSON,json,run,probe,dimensions,fileHash,fresh} from './lib.mjs'
 import {parseArgs,reportError} from './cli.mjs';
 import {createScene} from './create-scene.mjs';
 import {inspectScene} from './scene-inspect.mjs';
-import {photoPrompt,photoRequest} from './photo-prompt.mjs';
+import {checkPhotoTemplate,photoRequest} from './photo-prompt.mjs';
 import {renderFaces} from './render-faces.mjs';
 import {verifyMotion} from './verify-motion.mjs';
 import {videoPage,comparisonPage} from './delivery.mjs';
 const native=join(ROOT,'scripts/live-photo.sh'),gradeTool=join(ROOT,'scripts/live-grade.sh');
 const node=(script,args)=>run(process.execPath,[join(ROOT,'scripts',script),...args]);
-function caption(s){if(!/^[A-Za-z][A-Za-z ,.'’!?-]*$/.test(s)||s.trim().split(/\s+/).length<2||s.trim().split(/\s+/).length>5)throw Error('英文默认2–5词；请先选定一句简短英文。');return s;}
+function caption(s){if(typeof s!=='string'||!s.trim())throw Error('请先查看照片或视频封面，按本图语义生成2–5词英文短句并通过 --caption 传入；不提供固定默认文案。');s=s.trim();if(!/^[A-Za-z][A-Za-z ,.'’!?-]*$/.test(s)||s.split(/\s+/).length<2||s.split(/\s+/).length>5)throw Error('英文须为2–5词；请根据本图语义选定一句简短英文。');return s;}
 export function checkVideo(p){const info=probe(p),v=info.streams.filter(x=>x.codec_type==='video');if(v.length!==1)throw Error('只支持单条主视频轨道');const s=v[0];if(info.streams.filter(x=>x.codec_type==='audio').length>1)throw Error('暂不支持多条原声音轨，未丢弃任何音轨');if(!Number.isFinite(+info.format.duration)||+info.format.duration<=0)throw Error('视频时长无效');if(!['h264','hevc'].includes(s.codec_name)||!['yuv420p','yuvj420p','nv12'].includes(s.pix_fmt)||['smpte2084','arib-std-b67'].includes(s.color_transfer)||String(s.color_primaries).includes('2020'))throw Error('暂不支持该编码或HDR视频；未自动降级。');if(Math.abs(+s.start_time||0)>.001)throw Error('暂不支持非零起始时间的原Live');if(+info.format.duration>15)throw Error('目前实况流程支持15秒内素材，未截短原视频');return info;}
 export function checkLivePhoto(p){
  if(!['.jpg','.jpeg','.png'].includes(extname(p).toLowerCase()))throw Error('原Live封面暂仅支持8位sRGB或Display P3 JPEG/PNG；HEIC/HDR封面尚未验证，未自动转换。');
@@ -20,7 +20,7 @@ export function checkLivePhoto(p){
  if(!/bitsPerSample:\s*8\b/.test(details)||!/profile:\s*.*(?:sRGB|IEC61966-2.1|Display P3)/i.test(details)||!/space:\s*RGB\b/.test(details))throw Error('原Live封面暂仅支持明确标记的8位sRGB或Display P3，未静默改变色彩。');
  return {details};
 }
-async function freezeCheck(){await photoPrompt('A little pause.');}
+async function freezeCheck(){await checkPhotoTemplate();}
 export function soundPolicy(value='original'){if(!['original','mute'].includes(value))throw Error('声音策略仅支持 original（保留原声）或 mute（静音）；不提供新增音效');return value;}
 export function selectImageProvider(args={},env=process.env){
  const host=args['image-host']??(env.CODEX_THREAD_ID?'codex':'other');
@@ -48,8 +48,9 @@ export async function prepare(a){
  if((!a.photo&&!a.video)||!a.out)throw Error('需要照片或视频，以及 --out');
  const missingMotion=a['input-kind']==='live'&&!a.video;
  if(a.mode==='motion'&&!a.effect)throw Error('动效模式需要选择一个主要效果 --effect');
+ const text=a['already-styled']==='true'&&a.caption===undefined?null:caption(a.caption);
  const imageProvider=!useOriginal&&a['already-styled']!=='true'?selectImageProvider(a):null;
- await freezeCheck();let original=a.photo?resolve(a.photo):null;const directory=resolve(a.out),text=caption(a.caption||'A little pause.');
+ await freezeCheck();let original=a.photo?resolve(a.photo):null;const directory=resolve(a.out);
  let pair=null,inputProbe=null,photoProbe=null;const standalone=!original;
  if(a.video&&(useOriginal||standalone)){inputProbe=checkVideo(resolve(a.video));if(original&&useOriginal){photoProbe=checkLivePhoto(original);pair=JSON.parse(run(native,['verify','--photo',original,'--video',resolve(a.video)]));if(!pair.success)throw Error('原Live配对或苹果解码检查未通过。');}}
  await fresh(directory);await mkdir(join(directory,'input'));
